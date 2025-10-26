@@ -5,59 +5,93 @@
 }
 
 :root {
-    --red: #c41e3a;
-    --dark-red: #a01729;
-    --black: #1a1a1a;
-    --dark-gray: #2d2d2d;
-    --light-gray: #f5f5f5;
-    --white: #ffffff;
+    --primary-red: #ec0707;
+    --bright-red: #ff1a1a;
+    --dark-red: #c40606;
+    --black: #0A0A0A;
+    --dark-gray: #1A1A1A;
+    --medium-gray: #333333;
+    --light-gray: #F8F9FA;
+    --white: #FFFFFF;
 }
 
 body {
-    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--medium-gray);
+    background: var(--white);
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--medium-gray) 100%);
     color: white;
-    padding: 60px 20px 40px;
-    text-align: center;
-    border-bottom: 4px solid var(--red);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--primary-red);
 }
 
-header h1 {
-    font-size: 3em;
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(236,7,7,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.logo-section h1 {
+    font-size: 4em;
     font-weight: 300;
-    letter-spacing: 8px;
+    letter-spacing: 12px;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-header h2 {
-    font-size: 1.5em;
+.logo-section h2 {
+    font-size: 1.8em;
     font-weight: 300;
-    letter-spacing: 4px;
-    color: #b8b8b8;
+    letter-spacing: 10px;
+    color: #CCCCCC;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
-.badge-container {
+.header-badges {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .badge {
-    background: var(--red);
-    padding: 10px 20px;
+    background: var(--primary-red);
+    color: white;
+    padding: 12px 25px;
     border-radius: 5px;
     font-size: 0.9em;
-    letter-spacing: 2px;
     font-weight: 500;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(236, 7, 7, 0.4);
+    transition: all 0.3s;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 7, 7, 0.6);
 }
 
 /* Navigation */
@@ -66,25 +100,25 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
     display: block;
-    padding: 18px 30px;
+    padding: 18px 35px;
     color: white;
     text-decoration: none;
     transition: all 0.3s;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-size: 0.95em;
     font-weight: 500;
     border-bottom: 3px solid transparent;
@@ -93,7 +127,7 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a.active {
     background: var(--dark-gray);
-    border-bottom: 3px solid var(--red);
+    border-bottom: 3px solid var(--primary-red);
 }
 
 /* Container */
@@ -103,9 +137,9 @@ nav ul li a.active {
     padding: 20px;
 }
 
-/* Section */
+/* Sections */
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
 }
 
 section.gray-bg {
@@ -113,7 +147,7 @@ section.gray-bg {
 }
 
 section h2 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin-bottom: 30px;
     text-align: center;
     font-weight: 300;
@@ -121,10 +155,10 @@ section h2 {
     text-transform: uppercase;
     color: var(--black);
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
-section h2:after {
+section h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -132,7 +166,17 @@ section h2:after {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: var(--red);
+    background: var(--primary-red);
+    border-radius: 2px;
+}
+
+section p.intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #555;
 }
 
 /* Hero Section */
@@ -140,18 +184,18 @@ section h2:after {
     background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--dark-red) 100%);
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
 }
 
 .hero h3 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 3em;
+    margin-bottom: 25px;
     font-weight: 300;
     letter-spacing: 3px;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1.25em;
     max-width: 800px;
     margin: 0 auto 40px;
     line-height: 1.8;
@@ -159,115 +203,115 @@ section h2:after {
 
 .cta-button {
     display: inline-block;
-    background: var(--red);
+    background: var(--primary-red);
     color: white;
-    padding: 15px 40px;
+    padding: 16px 45px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1em;
-    letter-spacing: 1px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
     transition: all 0.3s;
-    border: 2px solid var(--red);
+    border: 2px solid var(--primary-red);
 }
 
 .cta-button:hover {
     background: transparent;
-    border-color: var(--red);
+    border-color: var(--primary-red);
     transform: translateY(-2px);
 }
 
 /* Vision Highlights */
 .vision-highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
     margin-top: 50px;
 }
 
 .highlight-item {
     background: white;
-    padding: 40px 30px;
+    padding: 45px 35px;
     border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     text-align: center;
     transition: all 0.3s;
-    border-top: 4px solid var(--red);
+    border-top: 4px solid var(--primary-red);
 }
 
 .highlight-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 25px rgba(196, 30, 58, 0.3);
+    box-shadow: 0 8px 30px rgba(236, 7, 7, 0.3);
 }
 
 .highlight-item h3 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     margin-bottom: 15px;
     color: var(--black);
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
 .highlight-item p {
     color: #555;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 1.05em;
 }
 
-/* Founder Section */
-.founder-content {
-    max-width: 900px;
-    margin: 0 auto;
+/* Priority Cards */
+.priority-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.priority-card {
     background: white;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    border-left: 5px solid var(--red);
+    border-top: 5px solid var(--primary-red);
 }
 
-.founder-content h3 {
+.priority-card h3 {
     font-size: 2.2em;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    color: var(--black);
-}
-
-.founder-content h4 {
-    font-size: 1.3em;
-    color: var(--red);
-    margin-bottom: 30px;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.founder-content p {
-    line-height: 1.8;
-    font-size: 1.05em;
     margin-bottom: 20px;
+    color: var(--black);
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.priority-card p {
+    line-height: 1.8;
     color: #555;
+    font-size: 1.05em;
 }
 
 /* Machines Grid */
 .machines-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
 }
 
 .machine-card {
     background: white;
-    padding: 35px;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: all 0.3s;
-    border-left: 4px solid var(--red);
+    border-left: 4px solid var(--primary-red);
 }
 
 .machine-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 25px rgba(196, 30, 58, 0.2);
+    box-shadow: 0 8px 30px rgba(236, 7, 7, 0.2);
 }
 
 .machine-card h3 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin-bottom: 20px;
     color: var(--black);
     letter-spacing: 1px;
@@ -276,7 +320,7 @@ section h2:after {
 
 .machine-card ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 .machine-card ul li {
@@ -291,48 +335,52 @@ section h2:after {
     border-bottom: none;
 }
 
-.machine-card ul li:before {
+.machine-card ul li::before {
     content: "▸";
     position: absolute;
     left: 0;
-    color: var(--red);
+    color: var(--primary-red);
     font-weight: bold;
 }
 
-/* Priority Section */
-.priority-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.priority-card {
+/* Founder Section */
+.founder-content {
+    max-width: 900px;
+    margin: 0 auto;
     background: white;
-    padding: 45px;
+    padding: 50px;
     border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-    border-top: 5px solid var(--red);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--primary-red);
 }
 
-.priority-card h3 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.founder-content h3 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
     color: var(--black);
+}
+
+.founder-content h4 {
+    font-size: 1.3em;
+    color: var(--primary-red);
+    margin-bottom: 30px;
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
-.priority-card p {
+.founder-content p {
     line-height: 1.8;
-    color: #555;
     font-size: 1.05em;
+    margin-bottom: 20px;
+    color: #555;
 }
 
-/* Contact Section */
+/* Contact Grid */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
     max-width: 1000px;
     margin: 0 auto;
     margin-top: 50px;
@@ -343,14 +391,14 @@ section h2:after {
     padding: 40px 30px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: all 0.3s;
-    border-top: 4px solid var(--red);
+    border-top: 4px solid var(--primary-red);
 }
 
 .contact-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 25px rgba(196, 30, 58, 0.3);
+    box-shadow: 0 8px 30px rgba(236, 7, 7, 0.3);
 }
 
 .contact-item h3 {
@@ -368,7 +416,7 @@ section h2:after {
 }
 
 .contact-item a {
-    color: var(--red);
+    color: var(--primary-red);
     text-decoration: none;
     transition: color 0.3s;
     font-weight: 500;
@@ -385,7 +433,7 @@ section h2:after {
     background: white;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 /* Footer */
@@ -395,14 +443,14 @@ footer {
     text-align: center;
     padding: 40px 20px;
     font-size: 0.9em;
-    border-top: 3px solid var(--red);
+    border-top: 3px solid var(--primary-red);
 }
 
 footer p {
     margin: 5px 0;
 }
 
-/* Animation */
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -420,13 +468,14 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-        letter-spacing: 4px;
+    .logo-section h1 {
+        font-size: 2.5em;
+        letter-spacing: 6px;
     }
 
-    header h2 {
-        font-size: 1.2em;
+    .logo-section h2 {
+        font-size: 1.3em;
+        letter-spacing: 4px;
     }
 
     nav ul {
@@ -443,11 +492,7 @@ footer p {
     }
 
     .hero h3 {
-        font-size: 1.8em;
-    }
-
-    .hero p {
-        font-size: 1em;
+        font-size: 2em;
     }
 
     .machines-grid,
@@ -458,8 +503,7 @@ footer p {
     }
 
     .founder-content,
-    .priority-card,
-    .contact-map {
+    .priority-card {
         padding: 30px 20px;
     }
 }
