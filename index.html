@@ -1,158 +1,816 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier MµM-Usinage - Mécanique de Précision</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-// MUM Usinage - One page React component (Graphic version)
-// Tailwind required. Place your logo at: public/assets/logo.png
-// Place stock/gallery images in: public/assets/gallery-1.jpg ... gallery-6.jpg
+        :root {
+            --red: #c41e3a;
+            --dark-red: #a01729;
+            --black: #1a1a1a;
+            --dark-gray: #2d2d2d;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+        }
 
-export default function MumUsinageSite() {
-  return (
-    <div className="min-h-screen font-sans text-gray-900 bg-white">
-      {/* Header */}
-      <header className="bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <img src="/assets/logo.png" alt="MUM Usinage" className="w-20 h-20 object-contain" />
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Atelier MµM Usinage</h1>
-              <p className="text-sm text-gray-600">Mécanique de précision — Swiss Made</p>
-            </div>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#about" className="hover:text-red-600">À propos</a>
-            <a href="#services" className="hover:text-red-600">Services</a>
-            <a href="#machines" className="hover:text-red-600">Parc machines</a>
-            <a href="#contact" className="hover:text-red-600">Contact</a>
-          </nav>
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-bottom: 4px solid var(--red);
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #b8b8b8;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--red);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--black);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            font-size: 0.95em;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: var(--dark-gray);
+            border-bottom: 3px solid var(--red);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Page Content */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* Section */
+        section {
+            padding: 60px 20px;
+        }
+
+        section.gray-bg {
+            background: var(--light-gray);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--dark-red) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid var(--red);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            border-color: var(--red);
+            transform: translateY(-2px);
+        }
+
+        /* Vision Highlights */
+        .vision-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid var(--red);
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(196, 30, 58, 0.3);
+        }
+
+        .highlight-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .highlight-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Founder Section */
+        .founder-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--red);
+        }
+
+        .founder-content h3 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: var(--black);
+        }
+
+        .founder-content h4 {
+            font-size: 1.3em;
+            color: var(--red);
+            margin-bottom: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .founder-content p {
+            line-height: 1.8;
+            font-size: 1.05em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Machines Grid */
+        .machines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .machine-card {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-left: 4px solid var(--red);
+        }
+
+        .machine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(196, 30, 58, 0.2);
+        }
+
+        .machine-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: var(--black);
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .machine-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .machine-card ul li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+
+        .machine-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .machine-card ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        /* Priority Section */
+        .priority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .priority-card {
+            background: white;
+            padding: 45px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--red);
+        }
+
+        .priority-card h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .priority-card p {
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--red);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(196, 30, 58, 0.3);
+        }
+
+        .contact-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .contact-item p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .contact-item a {
+            color: var(--red);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: var(--dark-red);
+            text-decoration: underline;
+        }
+
+        .contact-map {
+            margin-top: 50px;
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: #888;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9em;
+            border-top: 3px solid var(--red);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+                letter-spacing: 4px;
+            }
+
+            header h2 {
+                font-size: 1.2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                padding: 15px;
+                border-bottom: 1px solid var(--dark-gray);
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            .hero h3 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .machines-grid,
+            .priority-grid,
+            .vision-highlights,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-content,
+            .priority-card,
+            .contact-map {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MÉCANIQUE</h1>
+        <h2>DE PRÉCISION</h2>
+        <div class="badge-container">
+            <div class="badge">🇨🇭 Swiss Made</div>
+            <div class="badge">⚡ Délai sous 24h*</div>
+            <div class="badge">📱 mum_usinage</div>
         </div>
-      </header>
+    </header>
 
-      <main className="max-w-6xl mx-auto px-6">
-        {/* Hero with large background image */}
-        <section id="hero" className="relative mt-8 rounded-2xl overflow-hidden shadow-lg">
-          <img src="/assets/gallery-1.jpg" alt="Pièce usinée" className="w-full h-96 object-cover brightness-75" />
-          <div className="absolute inset-0 flex items-center">
-            <div className="max-w-3xl mx-auto text-center text-white px-6">
-              <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Prototypage & usinage de précision</h2>
-              <p className="mt-4 text-lg">Pièces sur mesure pour l'horlogerie, le médical et l'industrie — qualité suisse, délais courts.</p>
-              <div className="mt-6 flex justify-center gap-4">
-                <a href="#contact" className="px-6 py-3 rounded-full bg-red-600 font-semibold">Demande de devis</a>
-                <a href="#machines" className="px-6 py-3 rounded-full bg-white text-black border">Voir le parc machines</a>
-              </div>
+    <nav>
+        <ul>
+            <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+            <li><a href="#fondateur" class="nav-link">Fondateur</a></li>
+            <li><a href="#capacites" class="nav-link">Capacités</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE ACCUEIL -->
+    <div id="accueil" class="page-content active">
+        <section class="hero">
+            <div class="container">
+                <h3>Atelier MµM-Usinage</h3>
+                <p>Votre partenaire de confiance en mécanique de précision. Nous offrons des solutions d'usinage innovantes avec un engagement sans faille envers la qualité et la rapidité.</p>
+                <a href="#contact" class="cta-button nav-link">Contactez-nous</a>
             </div>
-          </div>
         </section>
 
-        {/* Intro blocks with colored accents */}
-        <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-lg border-l-4 border-red-600 bg-white shadow-sm">
-            <h3 className="font-semibold">Processus optimisés</h3>
-            <p className="text-sm mt-2 text-gray-600">Contact direct, contrôle qualité et méthodes modernes pour des livraisons rapides.</p>
-          </div>
-          <div className="p-6 rounded-lg border-l-4 border-gray-800 bg-white shadow-sm">
-            <h3 className="font-semibold">Production moderne</h3>
-            <p className="text-sm mt-2 text-gray-600">Centre d'usinage 3 axes, rectification de précision, gravure laser et impression 3D.</p>
-          </div>
-          <div className="p-6 rounded-lg border-l-4 border-red-600 bg-white shadow-sm">
-            <h3 className="font-semibold">Produit final sur mesure</h3>
-            <p className="text-sm mt-2 text-gray-600">Du prototype à la petite série, matériaux variés — acier, aluminium, titane, plastiques techniques.</p>
-          </div>
-        </section>
-
-        {/* Services / Gallery */}
-        <section id="services" className="mt-12">
-          <h3 className="text-2xl font-semibold">Nos services</h3>
-          <p className="text-gray-700 mt-2">Usinage, rectification, affûtage, impression 3D, gravure laser et métrologie.</p>
-
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="/assets/gallery-2.jpg" alt="Fraisage" className="w-full h-48 object-cover rounded-lg shadow" />
-            <img src="/assets/gallery-3.jpg" alt="Rectification" className="w-full h-48 object-cover rounded-lg shadow" />
-            <img src="/assets/gallery-4.jpg" alt="Impression 3D" className="w-full h-48 object-cover rounded-lg shadow" />
-          </div>
-        </section>
-
-        {/* Parc machines */}
-        <section id="machines" className="mt-12">
-          <h3 className="text-2xl font-semibold">Parc machines</h3>
-          <p className="text-gray-700 mt-2">Equipements récents et adaptés pour les pièces de précision.</p>
-
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex gap-4 items-center p-4 border rounded-lg">
-              <img src="/assets/gallery-5.jpg" alt="Centre usinage" className="w-36 h-28 object-cover rounded" />
-              <div>
-                <h5 className="font-semibold">Centre d'usinage 3 axes</h5>
-                <p className="text-sm text-gray-600">500×400×470 — broche 20'000 RPM</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-center p-4 border rounded-lg">
-              <img src="/assets/gallery-6.jpg" alt="Rectifieuse" className="w-36 h-28 object-cover rounded" />
-              <div>
-                <h5 className="font-semibold">Rectifieuse EWAG WS-11</h5>
-                <p className="text-sm text-gray-600">Affûtage et rectification de haute précision</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* About / founder */}
-        <section id="about" className="mt-12 bg-gray-50 p-6 rounded-lg">
-          <div className="md:flex gap-6 items-center">
-            <div className="md:w-2/3">
-              <h3 className="text-2xl font-semibold">Notre vision</h3>
-              <p className="text-gray-700 mt-3">Créer un lien direct avec nos clients pour livrer des pièces de précision dans les meilleurs délais, sans intermédiaires.</p>
-            </div>
-            <div className="md:w-1/3 mt-4 md:mt-0">
-              <h4 className="font-semibold">Maxime Mosset — Fondateur</h4>
-              <p className="text-sm text-gray-600 mt-2">CFC Mécanicien de production — expérience horlogerie, médical, injection plastique. Persévérance et adaptabilité.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section id="contact" className="mt-12 pb-16">
-          <h3 className="text-2xl font-semibold">Contact</h3>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <ul className="text-sm text-gray-700 space-y-2">
-                <li><strong>Téléphone:</strong> +41 (0)32 853 21 51</li>
-                <li><strong>Mobile:</strong> +41 (0)78 737 55 65</li>
-                <li><strong>Adresse:</strong> Rue des Monts 21 C Sud, 2053 Cernier, Suisse</li>
-                <li><strong>Email:</strong> info@mum-usinage.ch</li>
-              </ul>
-              <p className="text-sm text-gray-600 mt-4">Horaires : sur rendez-vous</p>
-            </div>
-            <div>
-              <form className="space-y-4 bg-white p-6 border rounded-lg">
-                <div>
-                  <label className="block text-sm font-medium">Nom</label>
-                  <input name="name" className="mt-1 block w-full rounded-md border px-3 py-2" placeholder="Votre nom" />
+        <section>
+            <div class="container">
+                <h2>Notre Vision</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 20px; font-size: 1.1em; line-height: 1.8; color: #555;">
+                    Notre vision est de créer un lien direct avec nos clients, leur permettant ainsi de bénéficier de pièces livrées dans les délais les plus courts, sans intermédiaires.
+                </p>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1em; line-height: 1.8; color: #555;">
+                    En comprenant pleinement l'ensemble de vos projets, nous sommes prêts à répondre à vos besoins de manière efficace et rapide.
+                </p>
+                <div class="vision-highlights">
+                    <div class="highlight-item">
+                        <h3>Processus Optimisés</h3>
+                        <p>Contact direct avec nos clients pour une communication fluide et des résultats optimaux</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Moyens Modernes</h3>
+                        <p>Équipements de production de pointe pour garantir précision et qualité</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Sur Mesure</h3>
+                        <p>Produit final adapté selon vos besoins spécifiques et vos exigences</p>
+                    </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium">Email</label>
-                  <input name="email" className="mt-1 block w-full rounded-md border px-3 py-2" placeholder="contact@exemple.ch" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium">Message</label>
-                  <textarea name="message" className="mt-1 block w-full rounded-md border px-3 py-2" rows={4} placeholder="Détails de la demande..."></textarea>
-                </div>
-                <div className="flex justify-end">
-                  <button type="button" className="px-4 py-2 rounded-md bg-red-600 text-white font-semibold">Envoyer</button>
-                </div>
-              </form>
             </div>
-          </div>
         </section>
 
-        <footer className="mt-12 border-t pt-6 text-sm text-gray-600">
-          <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4">
-            <div>© {new Date().getFullYear()} Atelier MµM Usinage — Rue des Monts 21 C Sud, 2053 Cernier</div>
-            <div className="flex gap-4">
-              <a href="#" className="hover:underline">Mentions légales</a>
-              <a href="#" className="hover:underline">Politique de confidentialité</a>
+        <section class="gray-bg">
+            <div class="container">
+                <h2>Notre Priorité : Qualité et Rapidité</h2>
+                <div class="priority-grid">
+                    <div class="priority-card">
+                        <h3>Qualité</h3>
+                        <p>Notre priorité absolue est d'allier qualité et rapidité pour nos clients. Nous nous engageons à fournir des produits et services de haute qualité, en respectant les normes les plus élevées.</p>
+                        <p style="margin-top: 15px;">Nos processus de contrôle de la qualité garantissent une excellence à chaque étape de la production.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Rapidité</h3>
+                        <p>Nous mettons en place des flux de travail optimisés pour répondre rapidement aux demandes et respecter les délais convenus.</p>
+                        <p style="margin-top: 15px;">Notre objectif est de fournir une expérience client exceptionnelle grâce à notre engagement envers la qualité et la rapidité.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </footer>
-      </main>
+        </section>
     </div>
-  );
-}
+
+    <!-- PAGE FONDATEUR -->
+    <div id="fondateur" class="page-content">
+        <section class="hero">
+            <div class="container">
+                <h3>Le Fondateur</h3>
+                <p>Découvrez le parcours et l'expertise de Maxime Mosset, fondateur d'Atelier MµM-Usinage</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Maxime Mosset</h2>
+                <div class="founder-content">
+                    <h3>MAXIME MOSSET</h3>
+                    <h4>Fondateur</h4>
+                    <p>En tant que titulaire d'un CFC de Mécanicien de production, de Polymécanicien, et d'autres formations, j'ai acquis une expérience précieuse en travaillant dans diverses entreprises de domaines tels que l'horlogerie, le secteur médical et les injections plastiques.</p>
+                    <p>En parallèle, je suis également un sportif de haut niveau, animé par de grandes ambitions. Ma persévérance et ma capacité à m'adapter à toutes les situations font de moi quelqu'un sur qui l'on peut compter.</p>
+                    <p style="margin-top: 30px; padding-top: 30px; border-top: 2px solid #eee; font-style: italic; color: var(--red);">
+                        "Mon engagement : vous offrir un service de qualité, rapide et personnalisé, en mettant mon expertise et ma passion au service de vos projets."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gray-bg">
+            <div class="container">
+                <h2>Expertise & Formation</h2>
+                <div class="vision-highlights">
+                    <div class="highlight-item">
+                        <h3>Horlogerie</h3>
+                        <p>Expérience dans l'industrie horlogère suisse, symbole de précision et d'excellence</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Secteur Médical</h3>
+                        <p>Expertise dans la fabrication de composants médicaux aux normes strictes</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Injections Plastiques</h3>
+                        <p>Maîtrise des processus d'injection et d'usinage de matériaux plastiques</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE CAPACITÉS -->
+    <div id="capacites" class="page-content">
+        <section class="hero">
+            <div class="container">
+                <h3>Nos Capacités</h3>
+                <p>Un parc machines moderne et complet pour répondre à tous vos besoins en mécanique de précision</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Nos Capacités de Production</h2>
+                <p style="text-align: center; max-width: 900px; margin: 0 auto 20px; font-size: 1.1em; line-height: 1.8; color: #555;">
+                    Notre créativité nous pousse à trouver des solutions pour des usinages allant des plus simples aux plus complexes. Nous sommes spécialisés dans la réalisation de prototypes et de petites séries, mais nous sommes également en mesure de mettre en place des processus pour des séries plus conséquentes.
+                </p>
+                <p style="text-align: center; max-width: 900px; margin: 0 auto; font-size: 1.1em; line-height: 1.8; color: #555;">
+                    Notre expertise s'étend à une diversité de matériaux usinés, tels que les différents aciers, les alliages d'aluminium, le cuivre, le titane, ainsi que les plastiques tels que le POM, le nylon, le téflon, et bien d'autres.
+                </p>
+            </div>
+        </section>
+
+        <section class="gray-bg">
+            <div class="container">
+                <h2>Parc Machines</h2>
+                <div class="machines-grid">
+                    <div class="machine-card">
+                        <h3>TOURNAGE</h3>
+                        <ul>
+                            <li>Tournage conventionnel</li>
+                            <li>Meulage sur tour Ø102</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>FRAISAGE</h3>
+                        <ul>
+                            <li>Centre d'usinage 3 axes X/Y/Z 500/400/470</li>
+                            <li>Broche 20'000 RPM / 60m/min</li>
+                            <li>Fraiseuse conventionnel X/Y/Z 700/250/430</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>RECTIFICATION</h3>
+                        <ul>
+                            <li>Rectification plane 450x150</li>
+                            <li>Rectification avec orientation 450x120</li>
+                            <li>Affutage sur Ewag</li>
+                            <li>Affutage Foret hélicoïdal + burin</li>
+                            <li>Affutage burins</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>PERÇAGE / ALÉSAGE</h3>
+                        <ul>
+                            <li>Perçage conventionnel</li>
+                            <li>Alésage par diverses méthodes</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>IMPRESSION 3D</h3>
+                        <ul>
+                            <li>4 couleurs simultanées</li>
+                            <li>Matériaux: PLA(CF), PC, PET, PETG, ABS, ASA, TPU</li>
+                            <li>Capacité 250x250x250</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>MICROBILLAGE</h3>
+                        <ul>
+                            <li>Cabine de microbillage</li>
+                            <li>Capacité 600x400x300</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>SCIAGE</h3>
+                        <ul>
+                            <li>Scie à tronçonner</li>
+                            <li>Angles possibles</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>GRAVAGE LASER</h3>
+                        <ul>
+                            <li>Laser fibre 40W</li>
+                            <li>Plateau 300x250</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>MODÉLISATION 3D</h3>
+                        <ul>
+                            <li>Logiciel CAO, FAO</li>
+                            <li>Mise en plan</li>
+                        </ul>
+                    </div>
+
+                    <div class="machine-card">
+                        <h3>MÉTROLOGIE</h3>
+                        <ul>
+                            <li>Contrôle par caméra 220x160x80</li>
+                            <li>Colonne de mesure 800mm</li>
+                            <li>Outils de métrologie standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE CONTACT -->
+    <div id="contact" class="page-content">
+        <section class="hero">
+            <div class="container">
+                <h3>Contactez-nous</h3>
+                <p>Nous sommes à votre disposition pour discuter de vos projets et répondre à vos besoins</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Informations de Contact</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>TÉLÉPHONE</h3>
+                        <p><a href="tel:+41328532151">+41 (0)32 853 21 51</a></p>
+                        <p><a href="tel:+41787375565">+41 (0)78 737 55 65</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>ADRESSE</h3>
+                        <p>Rue des Monts 21 C Sud<br>2053 Cernier<br>Suisse</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>EMAIL</h3>
+                        <p><a href="mailto:info@mum-usinage.ch">info@mum-usinage.ch</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-map">
+                    <h3 style="color: var(--black); margin-bottom: 20px; font-size: 1.5em;">Nos Horaires</h3>
+                    <p style="font-size: 1.1em; color: #555; line-height: 1.8;">
+                        Lundi - Vendredi : Sur rendez-vous<br>
+                        Disponibilité flexible selon vos besoins<br><br>
+                        <strong style="color: var(--red);">Délai sous 24h selon conditions</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gray-bg">
+            <div class="container">
+                <h2>Pourquoi Nous Choisir ?</h2>
+                <div class="vision-highlights">
+                    <div class="highlight-item">
+                        <h3>🇨🇭 Swiss Made</h3>
+                        <p>Qualité suisse garantie, fabrication locale à Cernier</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>⚡ Réactivité</h3>
+                        <p>Délais courts et respect des engagements</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>🎯 Précision</h3>
+                        <p>Expertise technique et contrôle qualité rigoureux</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>🤝 Proximité</h3>
+                        <p>Contact direct sans intermédiaires</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Atelier MµM-Usinage - Mécanique de Précision</p>
+        <p style="margin-top: 10px;">Tous droits réservés</p>
+        <p style="margin-top: 15px; color: #666;">* Délai sous 24h selon conditions</p>
+    </footer>
+
+    <script>
+        // Navigation entre les pages
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page-content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Retirer la classe active de tous les liens
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Ajouter la classe active au lien cliqué
+                this.classList.add('active');
+                
+                // Cacher toutes les pages
+                pages.forEach(page => page.classList.remove('active'));
+                
+                // Afficher la page correspondante
+                const targetId = this.getAttribute('href').substring(1);
+                const targetPage = document.getElementById(targetId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    
+                    // Scroll vers le haut
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
