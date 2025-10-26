@@ -1,159 +1,231 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🌳 Cabinet de Magnétisme</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8fb;
+      color: #1e2e3e;
+    }
 
-// MUM Usinage - One page React component (Graphic version)
-// Tailwind required. Place your logo at: public/assets/logo.png
-// Place stock/gallery images in: public/assets/gallery-1.jpg ... gallery-6.jpg
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-image: url('https://cache.magazine-avantages.fr/data/photo/w1536_ci/5p/randonnees-vers-lacs-de-montagnes2.jpg');
+      background-size: cover;
+      background-position: center;
+    }
 
-export default function MumUsinageSite() {
-  return (
-    <div className="min-h-screen font-sans text-gray-900 bg-white">
-      {/* Header */}
-      <header className="bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <img src="/assets/logo.png" alt="MUM Usinage" className="w-20 h-20 object-contain" />
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Atelier MµM Usinage</h1>
-              <p className="text-sm text-gray-600">Mécanique de précision — Swiss Made</p>
-            </div>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#about" className="hover:text-red-600">À propos</a>
-            <a href="#services" className="hover:text-red-600">Services</a>
-            <a href="#machines" className="hover:text-red-600">Parc machines</a>
-            <a href="#contact" className="hover:text-red-600">Contact</a>
-          </nav>
-        </div>
-      </header>
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-      <main className="max-w-6xl mx-auto px-6">
-        {/* Hero with large background image */}
-        <section id="hero" className="relative mt-8 rounded-2xl overflow-hidden shadow-lg">
-          <img src="/assets/gallery-1.jpg" alt="Pièce usinée" className="w-full h-96 object-cover brightness-75" />
-          <div className="absolute inset-0 flex items-center">
-            <div className="max-w-3xl mx-auto text-center text-white px-6">
-              <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Prototypage & usinage de précision</h2>
-              <p className="mt-4 text-lg">Pièces sur mesure pour l'horlogerie, le médical et l'industrie — qualité suisse, délais courts.</p>
-              <div className="mt-6 flex justify-center gap-4">
-                <a href="#contact" className="px-6 py-3 rounded-full bg-red-600 font-semibold">Demande de devis</a>
-                <a href="#machines" className="px-6 py-3 rounded-full bg-white text-black border">Voir le parc machines</a>
-              </div>
-            </div>
-          </div>
-        </section>
+    .hero-text h1 {
+      font-size: 3em;
+      margin: 0;
+    }
 
-        {/* Intro blocks with colored accents */}
-        <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-lg border-l-4 border-red-600 bg-white shadow-sm">
-            <h3 className="font-semibold">Processus optimisés</h3>
-            <p className="text-sm mt-2 text-gray-600">Contact direct, contrôle qualité et méthodes modernes pour des livraisons rapides.</p>
-          </div>
-          <div className="p-6 rounded-lg border-l-4 border-gray-800 bg-white shadow-sm">
-            <h3 className="font-semibold">Production moderne</h3>
-            <p className="text-sm mt-2 text-gray-600">Centre d'usinage 3 axes, rectification de précision, gravure laser et impression 3D.</p>
-          </div>
-          <div className="p-6 rounded-lg border-l-4 border-red-600 bg-white shadow-sm">
-            <h3 className="font-semibold">Produit final sur mesure</h3>
-            <p className="text-sm mt-2 text-gray-600">Du prototype à la petite série, matériaux variés — acier, aluminium, titane, plastiques techniques.</p>
-          </div>
-        </section>
+    .hero-text p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
 
-        {/* Services / Gallery */}
-        <section id="services" className="mt-12">
-          <h3 className="text-2xl font-semibold">Nos services</h3>
-          <p className="text-gray-700 mt-2">Usinage, rectification, affûtage, impression 3D, gravure laser et métrologie.</p>
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #2a506f;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="/assets/gallery-2.jpg" alt="Fraisage" className="w-full h-48 object-cover rounded-lg shadow" />
-            <img src="/assets/gallery-3.jpg" alt="Rectification" className="w-full h-48 object-cover rounded-lg shadow" />
-            <img src="/assets/gallery-4.jpg" alt="Impression 3D" className="w-full h-48 object-cover rounded-lg shadow" />
-          </div>
-        </section>
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
 
-        {/* Parc machines */}
-        <section id="machines" className="mt-12">
-          <h3 className="text-2xl font-semibold">Parc machines</h3>
-          <p className="text-gray-700 mt-2">Equipements récents et adaptés pour les pièces de précision.</p>
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex gap-4 items-center p-4 border rounded-lg">
-              <img src="/assets/gallery-5.jpg" alt="Centre usinage" className="w-36 h-28 object-cover rounded" />
-              <div>
-                <h5 className="font-semibold">Centre d'usinage 3 axes</h5>
-                <p className="text-sm text-gray-600">500×400×470 — broche 20'000 RPM</p>
-              </div>
-            </div>
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-            <div className="flex gap-4 items-center p-4 border rounded-lg">
-              <img src="/assets/gallery-6.jpg" alt="Rectifieuse" className="w-36 h-28 object-cover rounded" />
-              <div>
-                <h5 className="font-semibold">Rectifieuse EWAG WS-11</h5>
-                <p className="text-sm text-gray-600">Affûtage et rectification de haute précision</p>
-              </div>
-            </div>
-          </div>
-        </section>
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #2a506f;
+    }
 
-        {/* About / founder */}
-        <section id="about" className="mt-12 bg-gray-50 p-6 rounded-lg">
-          <div className="md:flex gap-6 items-center">
-            <div className="md:w-2/3">
-              <h3 className="text-2xl font-semibold">Notre vision</h3>
-              <p className="text-gray-700 mt-3">Créer un lien direct avec nos clients pour livrer des pièces de précision dans les meilleurs délais, sans intermédiaires.</p>
-            </div>
-            <div className="md:w-1/3 mt-4 md:mt-0">
-              <h4 className="font-semibold">Maxime Mosset — Fondateur</h4>
-              <p className="text-sm text-gray-600 mt-2">CFC Mécanicien de production — expérience horlogerie, médical, injection plastique. Persévérance et adaptabilité.</p>
-            </div>
-          </div>
-        </section>
+    .services {
+      display: grid;
+      gap: 20px;
+    }
 
-        {/* Contact */}
-        <section id="contact" className="mt-12 pb-16">
-          <h3 className="text-2xl font-semibold">Contact</h3>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <ul className="text-sm text-gray-700 space-y-2">
-                <li><strong>Téléphone:</strong> +41 (0)32 853 21 51</li>
-                <li><strong>Mobile:</strong> +41 (0)78 737 55 65</li>
-                <li><strong>Adresse:</strong> Rue des Monts 21 C Sud, 2053 Cernier, Suisse</li>
-                <li><strong>Email:</strong> info@mum-usinage.ch</li>
-              </ul>
-              <p className="text-sm text-gray-600 mt-4">Horaires : sur rendez-vous</p>
-            </div>
-            <div>
-              <form className="space-y-4 bg-white p-6 border rounded-lg">
-                <div>
-                  <label className="block text-sm font-medium">Nom</label>
-                  <input name="name" className="mt-1 block w-full rounded-md border px-3 py-2" placeholder="Votre nom" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium">Email</label>
-                  <input name="email" className="mt-1 block w-full rounded-md border px-3 py-2" placeholder="contact@exemple.ch" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium">Message</label>
-                  <textarea name="message" className="mt-1 block w-full rounded-md border px-3 py-2" rows={4} placeholder="Détails de la demande..."></textarea>
-                </div>
-                <div className="flex justify-end">
-                  <button type="button" className="px-4 py-2 rounded-md bg-red-600 text-white font-semibold">Envoyer</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
+    .service-card {
+      background: #ffffff;
+      border-left: 6px solid #76aace;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
 
-        <footer className="mt-12 border-t pt-6 text-sm text-gray-600">
-          <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4">
-            <div>© {new Date().getFullYear()} Atelier MµM Usinage — Rue des Monts 21 C Sud, 2053 Cernier</div>
-            <div className="flex gap-4">
-              <a href="#" className="hover:underline">Mentions légales</a>
-              <a href="#" className="hover:underline">Politique de confidentialité</a>
-            </div>
-          </div>
-        </footer>
-      </main>
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #2a506f;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1e3e5a;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #1e2e3e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 700px) {
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>Cabinet de Magnétisme</h1>
+      <p>Équilibrez vos énergies, retrouvez votre bien-être</p>
     </div>
-  );
-}
+  </div>
 
+  <nav>
+    <a href="#presentation">Présentation</a>
+    <a href="#services">Services</a>
+    <a href="#temoignages">Témoignages</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.arcinfo.ch/neuchatel-canton/val-de-ruz-region/tu-es-therapeute-tu-peux-soigner-314239" target="_blank" rel="noopener">Article</a>
+  </nav>
+
+  <section id="presentation">
+    <h2>Qui suis-je ?</h2>
+    <p>Je suis praticienne en magnétisme, spécialisée dans l'accompagnement énergétique, la gestion du stress, et le soulagement des douleurs physiques et émotionnelles. Mon approche est douce, bienveillante et personnalisée.</p>
+  </section>
+
+  <section id="services">
+    <h2>Mes services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Équilibrage énergétique</h3>
+        <p>Harmonisation de vos centres énergétiques (chakras) pour retrouver vitalité et sérénité.</p>
+      </div>
+      <div class="service-card">
+        <h3>Soulagement des douleurs</h3>
+        <p>Accompagnement naturel pour soulager douleurs chroniques, inflammations, troubles digestifs, etc.</p>
+      </div>
+      <div class="service-card">
+        <h3>Gestion du stress</h3>
+        <p>Séances ciblées pour calmer le mental, détendre le corps, retrouver un état de paix intérieure.</p>
+      </div>
+      <div class="service-card">
+        <h3>Soins à distance</h3>
+        <p>Magnétisme à distance pour ceux qui ne peuvent pas se déplacer au cabinet.</p>
+      </div>
+      <div class="service-card">
+        <h3>Hypnose</h3>
+        <p>Travail en hypnose pour accompagner les blocages inconscients, les phobies, le sommeil ou les addictions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="temoignages">
+    <h2>Témoignages</h2>
+    <p>Les témoignages de mes client(e)s seront bientôt disponibles ici.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📍 Rue Frédéric Soguel 20, 2053 Cernier<br />
+       📞 079 649 72 89<br />
+       📧 <a href="mailto:sara@cabinet-magnetisme.ch">sara@cabinet-magnetisme.ch</a>
+    </p>
+
+    <form>
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <input type="submit" value="Envoyer" />
+    </form>
+
+    <iframe
+      src="https://www.google.com/maps?q=47.059460849253696,6.902946081941649&hl=fr&z=16&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+
+  <footer>
+    © 2025 Cabinet de Magnétisme – Tous droits réservés.
+  </footer>
+
+</body>
+</html>
