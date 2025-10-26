@@ -1,1 +1,159 @@
+import React from "react";
+
+// MUM Usinage - One page React component (Graphic version)
+// Tailwind required. Place your logo at: public/assets/logo.png
+// Place stock/gallery images in: public/assets/gallery-1.jpg ... gallery-6.jpg
+
+export default function MumUsinageSite() {
+  return (
+    <div className="min-h-screen font-sans text-gray-900 bg-white">
+      {/* Header */}
+      <header className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="/assets/logo.png" alt="MUM Usinage" className="w-20 h-20 object-contain" />
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Atelier MµM Usinage</h1>
+              <p className="text-sm text-gray-600">Mécanique de précision — Swiss Made</p>
+            </div>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm">
+            <a href="#about" className="hover:text-red-600">À propos</a>
+            <a href="#services" className="hover:text-red-600">Services</a>
+            <a href="#machines" className="hover:text-red-600">Parc machines</a>
+            <a href="#contact" className="hover:text-red-600">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-6">
+        {/* Hero with large background image */}
+        <section id="hero" className="relative mt-8 rounded-2xl overflow-hidden shadow-lg">
+          <img src="/assets/gallery-1.jpg" alt="Pièce usinée" className="w-full h-96 object-cover brightness-75" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-3xl mx-auto text-center text-white px-6">
+              <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Prototypage & usinage de précision</h2>
+              <p className="mt-4 text-lg">Pièces sur mesure pour l'horlogerie, le médical et l'industrie — qualité suisse, délais courts.</p>
+              <div className="mt-6 flex justify-center gap-4">
+                <a href="#contact" className="px-6 py-3 rounded-full bg-red-600 font-semibold">Demande de devis</a>
+                <a href="#machines" className="px-6 py-3 rounded-full bg-white text-black border">Voir le parc machines</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Intro blocks with colored accents */}
+        <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 rounded-lg border-l-4 border-red-600 bg-white shadow-sm">
+            <h3 className="font-semibold">Processus optimisés</h3>
+            <p className="text-sm mt-2 text-gray-600">Contact direct, contrôle qualité et méthodes modernes pour des livraisons rapides.</p>
+          </div>
+          <div className="p-6 rounded-lg border-l-4 border-gray-800 bg-white shadow-sm">
+            <h3 className="font-semibold">Production moderne</h3>
+            <p className="text-sm mt-2 text-gray-600">Centre d'usinage 3 axes, rectification de précision, gravure laser et impression 3D.</p>
+          </div>
+          <div className="p-6 rounded-lg border-l-4 border-red-600 bg-white shadow-sm">
+            <h3 className="font-semibold">Produit final sur mesure</h3>
+            <p className="text-sm mt-2 text-gray-600">Du prototype à la petite série, matériaux variés — acier, aluminium, titane, plastiques techniques.</p>
+          </div>
+        </section>
+
+        {/* Services / Gallery */}
+        <section id="services" className="mt-12">
+          <h3 className="text-2xl font-semibold">Nos services</h3>
+          <p className="text-gray-700 mt-2">Usinage, rectification, affûtage, impression 3D, gravure laser et métrologie.</p>
+
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="/assets/gallery-2.jpg" alt="Fraisage" className="w-full h-48 object-cover rounded-lg shadow" />
+            <img src="/assets/gallery-3.jpg" alt="Rectification" className="w-full h-48 object-cover rounded-lg shadow" />
+            <img src="/assets/gallery-4.jpg" alt="Impression 3D" className="w-full h-48 object-cover rounded-lg shadow" />
+          </div>
+        </section>
+
+        {/* Parc machines */}
+        <section id="machines" className="mt-12">
+          <h3 className="text-2xl font-semibold">Parc machines</h3>
+          <p className="text-gray-700 mt-2">Equipements récents et adaptés pour les pièces de précision.</p>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex gap-4 items-center p-4 border rounded-lg">
+              <img src="/assets/gallery-5.jpg" alt="Centre usinage" className="w-36 h-28 object-cover rounded" />
+              <div>
+                <h5 className="font-semibold">Centre d'usinage 3 axes</h5>
+                <p className="text-sm text-gray-600">500×400×470 — broche 20'000 RPM</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-center p-4 border rounded-lg">
+              <img src="/assets/gallery-6.jpg" alt="Rectifieuse" className="w-36 h-28 object-cover rounded" />
+              <div>
+                <h5 className="font-semibold">Rectifieuse EWAG WS-11</h5>
+                <p className="text-sm text-gray-600">Affûtage et rectification de haute précision</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About / founder */}
+        <section id="about" className="mt-12 bg-gray-50 p-6 rounded-lg">
+          <div className="md:flex gap-6 items-center">
+            <div className="md:w-2/3">
+              <h3 className="text-2xl font-semibold">Notre vision</h3>
+              <p className="text-gray-700 mt-3">Créer un lien direct avec nos clients pour livrer des pièces de précision dans les meilleurs délais, sans intermédiaires.</p>
+            </div>
+            <div className="md:w-1/3 mt-4 md:mt-0">
+              <h4 className="font-semibold">Maxime Mosset — Fondateur</h4>
+              <p className="text-sm text-gray-600 mt-2">CFC Mécanicien de production — expérience horlogerie, médical, injection plastique. Persévérance et adaptabilité.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="mt-12 pb-16">
+          <h3 className="text-2xl font-semibold">Contact</h3>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li><strong>Téléphone:</strong> +41 (0)32 853 21 51</li>
+                <li><strong>Mobile:</strong> +41 (0)78 737 55 65</li>
+                <li><strong>Adresse:</strong> Rue des Monts 21 C Sud, 2053 Cernier, Suisse</li>
+                <li><strong>Email:</strong> info@mum-usinage.ch</li>
+              </ul>
+              <p className="text-sm text-gray-600 mt-4">Horaires : sur rendez-vous</p>
+            </div>
+            <div>
+              <form className="space-y-4 bg-white p-6 border rounded-lg">
+                <div>
+                  <label className="block text-sm font-medium">Nom</label>
+                  <input name="name" className="mt-1 block w-full rounded-md border px-3 py-2" placeholder="Votre nom" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium">Email</label>
+                  <input name="email" className="mt-1 block w-full rounded-md border px-3 py-2" placeholder="contact@exemple.ch" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium">Message</label>
+                  <textarea name="message" className="mt-1 block w-full rounded-md border px-3 py-2" rows={4} placeholder="Détails de la demande..."></textarea>
+                </div>
+                <div className="flex justify-end">
+                  <button type="button" className="px-4 py-2 rounded-md bg-red-600 text-white font-semibold">Envoyer</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <footer className="mt-12 border-t pt-6 text-sm text-gray-600">
+          <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4">
+            <div>© {new Date().getFullYear()} Atelier MµM Usinage — Rue des Monts 21 C Sud, 2053 Cernier</div>
+            <div className="flex gap-4">
+              <a href="#" className="hover:underline">Mentions légales</a>
+              <a href="#" className="hover:underline">Politique de confidentialité</a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}
 
