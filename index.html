@@ -814,3 +814,29 @@
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments à animer
+        document.querySelectorAll('.machine-card, .priority-card, .highlight-item, .contact-item, .founder-content').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
