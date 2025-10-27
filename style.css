@@ -49,7 +49,29 @@ header::before {
     padding: 50px 20px;
     position: relative;
     z-index: 1;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-image {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.logo-section {
+    text-align: left;
 }
 
 .logo-section h1 {
@@ -71,10 +93,9 @@ header::before {
 
 .header-badges {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    align-items: center;
 }
 
 .badge {
@@ -603,6 +624,29 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .header-left {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-section {
+        text-align: center;
+    }
+
+    .logo-image {
+        width: 100px;
+    }
+
+    .header-badges {
+        justify-content: center;
+    }
+
     .logo-section h1 {
         font-size: 2.5em;
         letter-spacing: 6px;
