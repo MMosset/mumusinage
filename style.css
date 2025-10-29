@@ -80,6 +80,8 @@ header::before {
     letter-spacing: 12px;
     margin-bottom: 10px;
     text-transform: uppercase;
+    font-family: 'Harlow Solid Italic', cursive, 'Segoe UI', sans-serif;
+    font-style: italic;
 }
 
 .logo-section h2 {
@@ -89,6 +91,8 @@ header::before {
     color: #CCCCCC;
     text-transform: uppercase;
     margin-bottom: 30px;
+    font-family: 'Harlow Solid Italic', cursive, 'Segoe UI', sans-serif;
+    font-style: italic;
 }
 
 .header-badges {
