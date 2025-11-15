@@ -14,28 +14,28 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observer tous les éléments à animer
 document.addEventListener('DOMContentLoaded', function() {
-    const elementsToAnimate = document.querySelectorAll('.machine-card, .priority-card, .highlight-item, .contact-item, .founder-content, .product-card');
+    const elementsToAnimate = document.querySelectorAll('.machine-card, .priority-card, .highlight-item, .contact-item, .founder-content, .product-card, .download-card');
     
     elementsToAnimate.forEach(el => {
         observer.observe(el);
     });
 });
 
-// Gestion du lien actif dans la navigation - VERSION CORRIGÉE
+// Menu hamburger pour mobile
+function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('active');
+}
+
+// Fermer le menu quand on clique sur un lien
 document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('nav ul li a');
-    
     navLinks.forEach(link => {
-        // Retirer d'abord toutes les classes active
-        link.classList.remove('active');
-        
-        const linkPage = link.getAttribute('href');
-        
-        // Ajouter la classe active au bon lien
-        if (linkPage === currentPage || 
-            (currentPage === '' && linkPage === 'index.html')) {
-            link.classList.add('active');
-        }
+        link.addEventListener('click', function() {
+            const menu = document.getElementById('nav-menu');
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
     });
 });
