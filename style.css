@@ -124,6 +124,26 @@ nav {
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 15px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1001;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -592,6 +612,32 @@ section p.intro {
     box-shadow: 0 4px 15px rgba(236, 7, 7, 0.4);
 }
 
+/* Product Download Link */
+.product-download {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.download-link {
+    display: inline-block;
+    background: var(--light-gray);
+    color: var(--primary-red);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid var(--primary-red);
+}
+
+.download-link:hover {
+    background: var(--primary-red);
+    color: white;
+    transform: translateY(-2px);
+}
+
 /* Product Gallery */
 .gallery-image {
     cursor: pointer;
@@ -793,6 +839,42 @@ footer p {
     .logo-section h2 {
         font-size: 1.3em;
         letter-spacing: 4px;
+    }
+
+    /* Menu hamburger mobile */
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    nav ul.active {
+        max-height: 600px;
+    }
+
+    nav ul li a {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--dark-gray);
+        text-align: center;
+    }
+
+    .gallery-nav.prev {
+        left: 10px;
+    }
+
+    .gallery-nav.next {
+        right: 10px;
+    }
+
+    .gallery-close {
+        right: 20px;
+        top: 20px;
+        font-size: 35px;
     }
 
     nav ul {
