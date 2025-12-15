@@ -41,7 +41,7 @@ header::before {
     bottom: 0;
     background: 
         linear-gradient(to right, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.7) 50%, rgba(26, 26, 26, 0.4) 100%),
-        url('public/assets/copeaux.jpg');
+        url('../public/assets/copeaux.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.8;
