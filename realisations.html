@@ -1,265 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réalisations - Atelier MµM-Usinage</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réalisations - Atelier MµM-Usinage</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-left">
-                <img src="public/assets/MUM_logo.png" alt="MµM-Usinage Logo" class="logo-image">
-                <div class="logo-section">
-                    <h1>MÉCANIQUE</h1>
-                    <h2>DE PRÉCISION</h2>
-                </div>
-            </div>
-            <div class="header-badges">
-                <div class="badge">🇨🇭 Swiss Made</div>
-                <div class="badge">⚡ Délai sous 24h*</div>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="nav-container">
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-            <ul id="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="fondateur.html">Fondateur</a></li>
-                <li><a href="capacites.html">Capacités</a></li>
-                <li><a href="realisations.html" class="active">Réalisations</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="G40-G60.html">G40-G60</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="telechargement.html">Téléchargement</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <h3>Nos Réalisations</h3>
-            <p>Découvrez quelques exemples de nos travaux en mécanique de précision</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Galerie de Réalisations</h2>
-            <p class="intro">
-                Voici quelques-unes de nos réalisations qui témoignent de notre expertise en usinage de précision et de la qualité de notre travail.
-            </p>
-            
-            <div class="products-grid">
-                <!-- Réalisation Plaque Skis Compétition -->
-                <div class="product-card">
-                    <div class="product-image gallery-image" onclick="openGallery('plaque-skis')">
-                        <img src="public/assets/UCS 1.jpeg" alt="Plaque pour skis compétition">
-                        <div class="gallery-indicator">📷 5 photos</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Plaque pour Skis Compétition</h3>
-                        <p class="product-description">Fabrication par fraisage CNC de plaques pour skis de compétition. Utilisation de matériaux résistant aux conditions extrêmes de l'extérieur comme le froid des glaciers et la chaleur lors des préparations en housse chauffante pour les courses.</p>
-                        <div class="product-specs">
-                            <span>✓ Fraisage CNC</span>
-                            <span>✓ Matériaux Extrêmes</span>
-                            <span>✓ Compétition</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Réalisation Table Appareil de Mesure -->
-                <div class="product-card">
-                    <div class="product-image gallery-image" onclick="openGallery('table-mesure')">
-                        <img src="public/assets/appareil de mesure 1.jpeg" alt="Table pour appareils de mesure">
-                        <div class="gallery-indicator">📷 4 photos</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Table pour Appareils de Mesure</h3>
-                        <p class="product-description">Fabrication d'une table de mesure pour un rétrofit de machine en appareil à mesure optique.</p>
-                        <div class="product-specs">
-                            <span>✓ Fraisage CNC</span>
-                            <span>✓ Traitement de Surface</span>
-                            <span>✓ Tolérances Géométriques Serrées</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Réalisation Divers Posages -->
-                <div class="product-card">
-                    <div class="product-image gallery-image" onclick="openGallery('divers-posages')">
-                        <img src="public/assets/outils Andre 1.jpeg" alt="Divers posages">
-                        <div class="gallery-indicator">📷 4 photos</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Divers Posages</h3>
-                        <p class="product-description">Divers posages mécaniques réalisés par fraisage CNC, pièces prototypes avec des tolérances géométriques élevées.</p>
-                        <div class="product-specs">
-                            <span>✓ Fraisage CNC</span>
-                            <span>✓ Fabrication Rapide</span>
-                            <span>✓ Prototype</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Réalisation Support Erowa -->
-                <div class="product-card">
-                    <div class="product-image gallery-image" onclick="openGallery('support-erowa')">
-                        <img src="public/assets/support Erowa 1.jpeg" alt="Support Erowa">
-                        <div class="gallery-indicator">📷 1 photo</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Support Erowa</h3>
-                        <p class="product-description">Posage de reprise pour une fabrication spécifique.</p>
-                        <div class="product-specs">
-                            <span>✓ Fraisage CNC</span>
-                            <span>✓ Rectification</span>
-                            <span>✓ Prototype</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Réalisation Attache Cadre de Vélo -->
-                <div class="product-card">
-                    <div class="product-image gallery-image" onclick="openGallery('attache-velo')">
-                        <img src="public/assets/velo gravel 1.jpeg" alt="Attache cadre de vélo">
-                        <div class="gallery-indicator">📷 1 photo</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Attache Cadre de Vélo</h3>
-                        <p class="product-description">Usinage sur mesure d'une attache pour un cadre de vélo, réalisation complètement personnalisée et sur mesure.</p>
-                        <div class="product-specs">
-                            <span>✓ Fraisage CNC</span>
-                            <span>✓ Conception Personnalisée</span>
-                            <span>✓ Prototype</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="gray-bg">
-        <div class="container">
-            <h2>Votre Projet sur Mesure</h2>
-            <div class="vision-highlights">
-                <div class="highlight-item">
-                    <h3>🎯 Précision Suisse</h3>
-                    <p>Chaque pièce est usinée avec une précision extrême selon vos spécifications</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>⚙️ Technologies Modernes</h3>
-                    <p>Équipements CNC de dernière génération pour des résultats optimaux</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>✓ Contrôle Qualité</h3>
-                    <p>Chaque réalisation est rigoureusement contrôlée avant livraison</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galerie modale -->
-    <div id="gallery-modal" class="gallery-modal">
-        <span class="gallery-close" onclick="closeGallery()">&times;</span>
-        <div class="gallery-content">
-            <button class="gallery-nav prev" onclick="changeImage(-1)">❮</button>
-            <img id="gallery-image" src="" alt="Gallery">
-            <button class="gallery-nav next" onclick="changeImage(1)">❯</button>
-        </div>
-        <div class="gallery-counter">
-            <span id="image-counter"></span>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Atelier MµM-Usinage - Mécanique de Précision</p>
-        <p style="margin-top: 10px;">Tous droits réservés</p>
-        <p style="margin-top: 15px; color: #666;">* Délai sous 24h selon conditions</p>
-    </footer>
-
-    <script src="script.js"></script>
-    
-    <script>
-        // Galerie d'images pour les réalisations
-        const galleries = {
-            'plaque-skis': [
-                'public/assets/UCS 1.jpeg',
-                'public/assets/UCS 2.jpeg',
-                'public/assets/UCS 3.jpeg',
-                'public/assets/UCS 4.jpeg',
-                'public/assets/UCS 5.jpeg'
-            ],
-            'table-mesure': [
-                'public/assets/appareil de mesure 1.jpeg',
-                'public/assets/appareil de mesure 2.jpeg',
-                'public/assets/appareil de mesure 3.jpeg',
-                'public/assets/appareil de mesure 4.jpeg'
-            ],
-            'divers-posages': [
-                'public/assets/outils Andre 1.jpeg',
-                'public/assets/outils Andre 2.jpeg',
-                'public/assets/outils Andre 3.jpeg',
-                'public/assets/outils Andre 4.jpeg'
-            ],
-            'support-erowa': [
-                'public/assets/support Erowa 1.jpeg'
-            ],
-            'attache-velo': [
-                'public/assets/velo gravel 1.jpeg'
-            ]
-        };
-
-        let currentGallery = [];
-        let currentImageIndex = 0;
-
-        function openGallery(galleryId) {
-            currentGallery = galleries[galleryId];
-            currentImageIndex = 0;
-            showImage();
-            document.getElementById('gallery-modal').classList.add('active');
-        }
-
-        function closeGallery() {
-            document.getElementById('gallery-modal').classList.remove('active');
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex < 0) {
-                currentImageIndex = currentGallery.length - 1;
-            } else if (currentImageIndex >= currentGallery.length) {
-                currentImageIndex = 0;
-            }
-            showImage();
-        }
-
-        function showImage() {
-            document.getElementById('gallery-image').src = currentGallery[currentImageIndex];
-            document.getElementById('image-counter').textContent = 
-                (currentImageIndex + 1) + ' / ' + currentGallery.length;
-        }
-
-        // Fermer avec la touche Escape
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-
-        // Navigation avec les flèches du clavier
-        document.addEventListener('keydown', function(event) {
-            if (document.getElementById('gallery-modal').classList.contains('active')) {
-                if (event.key === 'ArrowLeft') {
-                    changeImage(-1);
-                } else if (event.key === 'ArrowRight') {
-                    changeImage(1);
-                }
-            }
-        });
-    </script>
+<header>
+<div class="header-content">
+<div class="header-left">
+<img src="public/assets/MUM_logo.png" alt="MµM-Usinage Logo" class="logo-image">
+<div class="logo-section"><h1>MÉCANIQUE</h1><h2>DE PRÉCISION</h2></div>
+</div>
+<div class="header-right">
+<div id="google_translate_element"></div>
+<div class="header-badges">
+<div class="badge">🇨🇭 Swiss Made</div>
+<div class="badge">⚡ Délai sous 24h*</div>
+</div>
+</div>
+</div>
+</header>
+<script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'fr',includedLanguages:'en,de,fr,it',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<nav>
+<div class="nav-container">
+<button class="hamburger" onclick="toggleMenu()">☰</button>
+<ul id="nav-menu">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="fondateur.html">Fondateur</a></li>
+<li><a href="capacites.html">Capacités</a></li>
+<li><a href="realisations.html" class="active">Réalisations</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="G40-G60.html">G40-G60</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="telechargement.html">Téléchargement</a></li>
+</ul>
+</div>
+</nav>
+<section class="hero">
+<div class="container"><h3>Nos Réalisations</h3><p>Découvrez quelques exemples de nos travaux en mécanique de précision</p></div>
+</section>
+<section>
+<div class="container">
+<h2>Galerie de Réalisations</h2>
+<p class="intro">Voici quelques-unes de nos réalisations qui témoignent de notre expertise en usinage de précision et de la qualité de notre travail.</p>
+<div class="products-grid">
+<div class="product-card">
+<div class="product-image gallery-image" onclick="openGallery('plaque-skis')">
+<img src="public/assets/UCS 1.jpeg" alt="Plaque pour skis compétition">
+<div class="gallery-indicator">📷 5 photos</div>
+</div>
+<div class="product-info">
+<h3>Plaque pour Skis Compétition</h3>
+<p class="product-description">Fabrication par fraisage CNC de plaques pour skis de compétition. Utilisation de matériaux résistant aux conditions extrêmes de l'extérieur comme le froid des glaciers et la chaleur lors des préparations en housse chauffante pour les courses.</p>
+<div class="product-specs">
+<span>✓ Fraisage CNC</span>
+<span>✓ Matériaux Extrêmes</span>
+<span>✓ Compétition</span>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-image gallery-image" onclick="openGallery('table-mesure')">
+<img src="public/assets/appareil de mesure 1.jpeg" alt="Table pour appareils de mesure">
+<div class="gallery-indicator">📷 4 photos</div>
+</div>
+<div class="product-info">
+<h3>Table pour Appareils de Mesure</h3>
+<p class="product-description">Fabrication d'une table de mesure pour un rétrofit de machine en appareil à mesure optique.</p>
+<div class="product-specs">
+<span>✓ Fraisage CNC</span>
+<span>✓ Traitement de Surface</span>
+<span>✓ Tolérances Géométriques Serrées</span>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-image gallery-image" onclick="openGallery('divers-posages')">
+<img src="public/assets/outils Andre 1.jpeg" alt="Divers posages">
+<div class="gallery-indicator">📷 4 photos</div>
+</div>
+<div class="product-info">
+<h3>Divers Posages</h3>
+<p class="product-description">Divers posages mécaniques réalisés par fraisage CNC, pièces prototypes avec des tolérances géométriques élevées.</p>
+<div class="product-specs">
+<span>✓ Fraisage CNC</span>
+<span>✓ Fabrication Rapide</span>
+<span>✓ Prototype</span>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-image gallery-image" onclick="openGallery('support-erowa')">
+<img src="public/assets/support Erowa 1.jpeg" alt="Support Erowa">
+<div class="gallery-indicator">📷 1 photo</div>
+</div>
+<div class="product-info">
+<h3>Support Erowa</h3>
+<p class="product-description">Posage de reprise pour une fabrication spécifique.</p>
+<div class="product-specs">
+<span>✓ Fraisage CNC</span>
+<span>✓ Rectification</span>
+<span>✓ Prototype</span>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-image gallery-image" onclick="openGallery('attache-velo')">
+<img src="public/assets/velo gravel 1.jpeg" alt="Attache cadre de vélo">
+<div class="gallery-indicator">📷 1 photo</div>
+</div>
+<div class="product-info">
+<h3>Attache Cadre de Vélo</h3>
+<p class="product-description">Usinage sur mesure d'une attache pour un cadre de vélo, réalisation complètement personnalisée et sur mesure.</p>
+<div class="product-specs">
+<span>✓ Fraisage CNC</span>
+<span>✓ Conception Personnalisée</span>
+<span>✓ Prototype</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="gray-bg">
+<div class="container">
+<h2>Votre Projet sur Mesure</h2>
+<div class="vision-highlights">
+<div class="highlight-item"><h3>🎯 Précision Suisse</h3><p>Chaque pièce est usinée avec une précision extrême selon vos spécifications</p></div>
+<div class="highlight-item"><h3>⚙️ Technologies Modernes</h3><p>Équipements CNC de dernière génération pour des résultats optimaux</p></div>
+<div class="highlight-item"><h3>✓ Contrôle Qualité</h3><p>Chaque réalisation est rigoureusement contrôlée avant livraison</p></div>
+</div>
+</div>
+</section>
+<div id="gallery-modal" class="gallery-modal">
+<span class="gallery-close" onclick="closeGallery()">&times;</span>
+<div class="gallery-content">
+<button class="gallery-nav prev" onclick="changeImage(-1)">❮</button>
+<img id="gallery-image" src="" alt="Gallery">
+<button class="gallery-nav next" onclick="changeImage(1)">❯</button>
+</div>
+<div class="gallery-counter"><span id="image-counter"></span></div>
+</div>
+<footer>
+<p>&copy; 2025 Atelier MµM-Usinage - Mécanique de Précision</p>
+<p style="margin-top: 10px;">Tous droits réservés</p>
+<p style="margin-top: 15px; color: #666;">* Délai sous 24h selon conditions</p>
+</footer>
+<script src="script.js"></script>
+<script>const galleries={'plaque-skis':['public/assets/UCS 1.jpeg','public/assets/UCS 2.jpeg','public/assets/UCS 3.jpeg','public/assets/UCS 4.jpeg','public/assets/UCS 5.jpeg'],'table-mesure':['public/assets/appareil de mesure 1.jpeg','public/assets/appareil de mesure 2.jpeg','public/assets/appareil de mesure 3.jpeg','public/assets/appareil de mesure 4.jpeg'],'divers-posages':['public/assets/outils Andre 1.jpeg','public/assets/outils Andre 2.jpeg','public/assets/outils Andre 3.jpeg','public/assets/outils Andre 4.jpeg'],'support-erowa':['public/assets/support Erowa 1.jpeg'],'attache-velo':['public/assets/velo gravel 1.jpeg']};let currentGallery=[],currentImageIndex=0;function openGallery(e){currentGallery=galleries[e],currentImageIndex=0,showImage(),document.getElementById("gallery-modal").classList.add("active")}function closeGallery(){document.getElementById("gallery-modal").classList.remove("active")}function changeImage(e){currentImageIndex+=e,currentImageIndex<0?currentImageIndex=currentGallery.length-1:currentImageIndex>=currentGallery.length&&(currentImageIndex=0),showImage()}function showImage(){document.getElementById("gallery-image").src=currentGallery[currentImageIndex],document.getElementById("image-counter").textContent=currentImageIndex+1+" / "+currentGallery.length}document.addEventListener("keydown",(function(e){"Escape"===e.key&&closeGallery()})),document.addEventListener("keydown",(function(e){document.getElementById("gallery-modal").classList.contains("active")&&("ArrowLeft"===e.key?changeImage(-1):"ArrowRight"===e.key&&changeImage(1))}));</script>
 </body>
 </html>
