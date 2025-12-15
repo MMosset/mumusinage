@@ -40,11 +40,11 @@ header::before {
     right: 0;
     bottom: 0;
     background: 
-        linear-gradient(to right, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.7) 50%, rgba(26, 26, 26, 0.4) 100%),
+        linear-gradient(to right, rgba(10, 10, 10, 0.85) 0%, rgba(26, 26, 26, 0.5) 50%, rgba(26, 26, 26, 0.2) 100%),
         url('../public/assets/copeaux.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.8;
+    opacity: 1;
     z-index: 0;
 }
 
