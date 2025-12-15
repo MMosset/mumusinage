@@ -49,6 +49,128 @@
     <section>
         <div class="container">
             <h2>Nos Produits</h2>
+            <p class="intro">Parcourez notre gamme de produits fabriqués avec précision et qualité.</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image gallery-image" onclick="openGallery('support-chariot-102')">
+                        <img src="public/assets/support chariot 102 1.jpeg" alt="Support Chariot 102">
+                        <div class="product-badge">Nouveau</div>
+                        <div class="gallery-indicator">📷 4 photos</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Support Chariot 102</h3>
+                        <p class="product-description">Support robuste, pratique et pensé pour une utilisation optimale. Fabriqué avec des matériaux anticorrosion pour une durabilité maximale.</p>
+                        <div class="product-specs">
+                            <span>✓ Swiss Made</span>
+                            <span>✓ Haute Qualité</span>
+                            <span>✓ Anticorrosion</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">CHF 190.- TTC</span>
+                            <a href="contact.html" class="product-btn">Commander</a>
+                        </div>
+                        <div class="product-download">
+                            <a href="public/assets/Support chariot 102 MµM usinage.pdf" download class="download-link">📥 Télécharger la fiche technique (PDF)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gray-bg">
+        <div class="container">
+            <h2>Informations Commande</h2>
+            <div class="vision-highlights">
+                <div class="highlight-item">
+                    <h3>🚚 Livraison</h3>
+                    <p>Livraison rapide en Suisse et international</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>💳 Paiement</h3>
+                    <p>Paiement sécurisé par virement, facture ou Twint</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>📞 Support</h3>
+                    <p>Conseil et support technique disponible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="gallery-modal" class="gallery-modal">
+        <span class="gallery-close" onclick="closeGallery()">&times;</span>
+        <div class="gallery-content">
+            <button class="gallery-nav prev" onclick="changeImage(-1)">❮</button>
+            <img id="gallery-image" src="" alt="Gallery">
+            <button class="gallery-nav next" onclick="changeImage(1)">❯</button>
+        </div>
+        <div class="gallery-counter"><span id="image-counter"></span></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Atelier MµM-Usinage - Mécanique de Précision</p>
+        <p style="margin-top: 10px;">Tous droits réservés</p>
+        <p style="margin-top: 15px; color: #666;">* Délai sous 24h selon conditions</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+const galleries={'support-chariot-102':['public/assets/support chariot 102 1.jpeg','public/assets/support chariot 102 2.jpeg','public/assets/support chariot 102 3.jpeg','public/assets/support chariot 102 4.jpeg']};let currentGallery=[],currentImageIndex=0;function openGallery(e){currentGallery=galleries[e],currentImageIndex=0,showImage(),document.getElementById("gallery-modal").classList.add("active")}function closeGallery(){document.getElementById("gallery-modal").classList.remove("active")}function changeImage(e){currentImageIndex+=e,currentImageIndex<0?currentImageIndex=currentGallery.length-1:currentImageIndex>=currentGallery.length&&(currentImageIndex=0),showImage()}function showImage(){document.getElementById("gallery-image").src=currentGallery[currentImageIndex],document.getElementById("image-counter").textContent=currentImageIndex+1+" / "+currentGallery.length}document.addEventListener("keydown",(function(e){"Escape"===e.key&&closeGallery()})),document.addEventListener("keydown",(function(e){document.getElementById("gallery-modal").classList.contains("active")&&("ArrowLeft"===e.key?changeImage(-1):"ArrowRight"===e.key&&changeImage(1))}));
+    </script>
+</body>
+</html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Atelier MµM-Usinage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <img src="public/assets/MUM_logo.png" alt="MµM-Usinage Logo" class="logo-image">
+                <div class="logo-section">
+                    <h1>MÉCANIQUE</h1>
+                    <h2>DE PRÉCISION</h2>
+                </div>
+            </div>
+            <div class="header-badges">
+                <div class="badge">🇨🇭 Swiss Made</div>
+                <div class="badge">⚡ Délai sous 24h*</div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="fondateur.html">Fondateur</a></li>
+                <li><a href="capacites.html">Capacités</a></li>
+                <li><a href="realisations.html">Réalisations</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="G40-G60.html">G40-G60</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="telechargement.html">Téléchargement</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h3>Notre Shop</h3>
+            <p>Découvrez notre sélection de produits et pièces de qualité suisse</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Nos Produits</h2>
             <p class="intro">
                 Parcourez notre gamme de produits fabriqués avec précision et qualité. Chaque pièce est réalisée selon les plus hauts standards suisses.
             </p>
