@@ -24,7 +24,7 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--medium-gray) 100%);
+    background: var(--black);
     color: white;
     padding: 0;
     position: relative;
@@ -44,7 +44,6 @@ header::before {
         url('../public/assets/copeaux.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 1;
     z-index: 0;
 }
 
