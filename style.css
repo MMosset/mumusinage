@@ -368,23 +368,24 @@ section p.intro {
     background: var(--light-gray);
     border-radius: 8px;
     padding: 10px;
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .machine-card:hover .machine-icon-header {
-    background: var(--primary-red);
-    transform: scale(1.15) rotate(5deg);
+    background: white;
+    transform: scale(1.2) rotate(8deg);
+    box-shadow: 0 8px 25px rgba(236, 7, 7, 0.3);
 }
 
 .machine-icon-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: filter 0.3s;
+    transition: all 0.3s;
 }
 
 .machine-card:hover .machine-icon-img {
-    filter: brightness(0) invert(1);
+    /* Pas de filtre - l'image garde sa couleur */
 }
 
 .machine-card h3 {
