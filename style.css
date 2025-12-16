@@ -22,7 +22,6 @@ body {
     background: var(--white);
 }
 
-/* Header */
 header {
     background: var(--black);
     color: white;
@@ -39,9 +38,7 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        linear-gradient(to right, rgba(10, 10, 10, 0.85) 0%, rgba(26, 26, 26, 0.5) 50%, rgba(26, 26, 26, 0.2) 100%),
-        url('public/assets/copeaux.jpg');
+    background: linear-gradient(to right, rgba(10, 10, 10, 0.85) 0%, rgba(26, 26, 26, 0.5) 50%, rgba(26, 26, 26, 0.2) 100%), url('public/assets/copeaux.jpg');
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -131,7 +128,6 @@ header::after {
     box-shadow: 0 6px 20px rgba(236, 7, 7, 0.6);
 }
 
-/* Navigation */
 nav {
     background: var(--black);
     position: sticky;
@@ -188,14 +184,12 @@ nav ul li a.active {
     border-bottom: 3px solid var(--primary-red);
 }
 
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Sections */
 section {
     padding: 80px 20px;
 }
@@ -237,7 +231,6 @@ section p.intro {
     color: #555;
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--dark-red) 100%);
     color: white;
@@ -279,7 +272,6 @@ section p.intro {
     transform: translateY(-2px);
 }
 
-/* Vision Highlights */
 .vision-highlights {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -316,7 +308,6 @@ section p.intro {
     font-size: 1.05em;
 }
 
-/* Priority Cards */
 .priority-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -346,7 +337,6 @@ section p.intro {
     font-size: 1.05em;
 }
 
-/* Machines Grid */
 .machines-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -368,7 +358,6 @@ section p.intro {
     box-shadow: 0 8px 30px rgba(236, 7, 7, 0.2);
 }
 
-/* Icône machine dans le header */
 .machine-icon-header {
     width: 60px;
     height: 60px;
@@ -431,7 +420,6 @@ section p.intro {
     font-weight: bold;
 }
 
-/* Materials Grid */
 .materials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -473,7 +461,6 @@ section p.intro {
     line-height: 1.6;
 }
 
-/* Founder Section */
 .founder-content {
     max-width: 900px;
     margin: 0 auto;
@@ -506,7 +493,6 @@ section p.intro {
     color: #555;
 }
 
-/* Contact Grid */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -566,7 +552,6 @@ section p.intro {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* Products Grid */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -701,7 +686,6 @@ section p.intro {
     box-shadow: 0 4px 15px rgba(236, 7, 7, 0.4);
 }
 
-/* Product Download Link */
 .product-download {
     margin-top: 20px;
     padding-top: 20px;
@@ -727,7 +711,6 @@ section p.intro {
     transform: translateY(-2px);
 }
 
-/* Product Gallery */
 .gallery-image {
     cursor: pointer;
     position: relative;
@@ -831,7 +814,6 @@ section p.intro {
     border-radius: 5px;
 }
 
-/* Download Cards */
 .download-card {
     display: flex;
     flex-direction: column;
@@ -865,7 +847,6 @@ section p.intro {
     box-shadow: 0 4px 15px rgba(236, 7, 7, 0.4);
 }
 
-/* Footer */
 footer {
     background: var(--black);
     color: #888;
@@ -879,7 +860,6 @@ footer p {
     margin: 5px 0;
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -895,7 +875,6 @@ footer p {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -930,7 +909,6 @@ footer p {
         letter-spacing: 4px;
     }
 
-    /* Menu hamburger mobile */
     .hamburger {
         display: block !important;
     }
