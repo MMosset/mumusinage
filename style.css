@@ -208,12 +208,14 @@ section h2 {
     color: var(--white);
     position: relative;
     padding: 40px 20px;
-    background: linear-gradient(to right, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.85) 50%, rgba(10, 10, 10, 0.95) 100%), 
+    background: linear-gradient(to right, rgba(10, 10, 10, 0.4) 0%, rgba(26, 26, 26, 0.3) 50%, rgba(10, 10, 10, 0.4) 100%), 
                 url('public/assets/suisse.jpg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: repeat;
     background-position: center;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 section h2::after {
