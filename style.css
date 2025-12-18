@@ -20,6 +20,7 @@ body {
     line-height: 1.6;
     color: var(--medium-gray);
     background: var(--white);
+    padding-top: 60px;
 }
 
 header {
@@ -130,8 +131,11 @@ header::after {
 nav {
     background: var(--black);
     border-bottom: 2px solid var(--dark-gray);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -1077,11 +1081,6 @@ footer p {
 /* Animation smooth lors du scroll avec menu sticky */
 html {
     scroll-behavior: smooth;
-}
-
-/* Ajuster le padding du body pour compenser le menu sticky */
-body {
-    padding-top: 0;
 }
 
 /* Style amélioré pour le menu sticky sur mobile */
