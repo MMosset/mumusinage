@@ -208,11 +208,11 @@ section h2 {
     color: var(--white);
     position: relative;
     padding: 40px 20px;
-    background: linear-gradient(to right, rgba(10, 10, 10, 0.5) 0%, rgba(26, 26, 26, 0.4) 50%, rgba(10, 10, 10, 0.5) 100%), 
+    background: linear-gradient(to right, rgba(10, 10, 10, 0.3) 0%, rgba(26, 26, 26, 0.6) 50%, rgba(10, 10, 10, 0.9) 100%), 
                 url('public/assets/suisse.jpg');
     background-size: auto 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left center;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
