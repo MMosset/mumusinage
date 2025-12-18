@@ -130,6 +130,10 @@ header::after {
 nav {
     background: var(--black);
     border-bottom: 2px solid var(--dark-gray);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -1067,5 +1071,32 @@ footer p {
 
     .priority-card {
         padding: 25px;
+    }
+}
+
+/* Animation smooth lors du scroll avec menu sticky */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajuster le padding du body pour compenser le menu sticky */
+body {
+    padding-top: 0;
+}
+
+/* Style amélioré pour le menu sticky sur mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        position: relative;
+        z-index: 1001;
+    }
+    
+    nav ul.active {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 }
