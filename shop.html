@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop - Atelier MµM-Usinage</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Grille spécifique pour la page shop - 2 colonnes fixes */
+.products-grid-shop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .products-grid-shop {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
 <header>
@@ -39,50 +57,149 @@
 </ul>
 </div>
 </nav>
+
 <section class="hero">
-<div class="container"><h3>Notre Shop</h3><p>Découvrez notre sélection de produits et pièces de qualité suisse</p></div>
+<div class="container">
+<h3>Notre Boutique</h3>
+<p>Découvrez nos produits et pièces de qualité suisse</p>
+</div>
 </section>
+
 <section>
 <div class="container">
-<h2>Nos Produits</h2>
-<p class="intro">Parcourez notre gamme de produits fabriqués avec précision et qualité.</p>
-<div class="products-grid">
+<h2>Produits Disponibles</h2>
+<p class="intro">Retrouvez ici notre sélection de produits en vente. Chaque produit est contrôlé et garanti avant expédition. Pour toute question sur la disponibilité ou les caractéristiques, n'hésitez pas à nous contacter.</p>
+</div>
+</section>
+
+<section class="gray-bg">
+<div class="container">
+<div class="products-grid-shop">
+
+<!-- Produit 1 - Compresseur G60 -->
 <div class="product-card">
-<div class="product-image gallery-image" onclick="openGallery('support-chariot-102')">
-<img src="public/assets/support chariot 102 1.jpeg" alt="Support Chariot 102">
-<div class="product-badge">Nouveau</div>
-<div class="gallery-indicator">📷 4 photos</div>
+<div class="product-image gallery-image" onclick="openGallery('g60-product')">
+<img src="public/assets/G60 1.jpeg" alt="Compresseur G60">
+<span class="product-badge">Disponible</span>
+<div class="gallery-indicator">📷 3 photos</div>
 </div>
 <div class="product-info">
-<h3>Support Chariot 102</h3>
-<p class="product-description">Support robuste, pratique et pensé pour une utilisation optimale. Fabriqué avec des matériaux anticorrosion pour une durabilité maximale.</p>
+<h3>Compresseur G60 Révisé</h3>
+<p class="product-description">Compresseur G60 entièrement révisé avec toutes les pièces d'usure remplacées. Prêt à être monté sur votre véhicule.</p>
 <div class="product-specs">
-<span>✓ Swiss Made</span>
-<span>✓ Haute Qualité</span>
-<span>✓ Anticorrosion</span>
+<span>✓ Révision complète</span>
+<span>✓ Pièces neuves</span>
+<span>✓ Testé et contrôlé</span>
 </div>
 <div class="product-footer">
-<span class="product-price">CHF 190.- TTC</span>
+<div class="product-price">Sur demande</div>
 <a href="contact.html" class="product-btn">Commander</a>
 </div>
 <div class="product-download">
-<a href="public/assets/Support chariot 102 MµM usinage.pdf" download class="download-link">📥 Télécharger la fiche technique (PDF)</a>
+<a href="public/assets/Brochure_Atelier_MuM-Usinage.pdf" class="download-link" download>📄 Télécharger la brochure</a>
 </div>
 </div>
+</div>
+
+<!-- Espace pour produit 2 (à venir) -->
+<!-- Décommentez ce bloc quand vous aurez un 2ème produit -->
+<!--
+<div class="product-card">
+<div class="product-image">
+<img src="public/assets/produit2.jpg" alt="Produit 2">
+<span class="product-badge promo">Nouveau</span>
+</div>
+<div class="product-info">
+<h3>Nom du Produit 2</h3>
+<p class="product-description">Description du deuxième produit ici. Ajoutez les détails importants pour vos clients.</p>
+<div class="product-specs">
+<span>Spec 1</span>
+<span>Spec 2</span>
+<span>Spec 3</span>
+</div>
+<div class="product-footer">
+<div class="product-price">Prix CHF</div>
+<a href="contact.html" class="product-btn">Commander</a>
+</div>
+</div>
+</div>
+-->
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Pourquoi Commander Chez Nous ?</h2>
+<div class="vision-highlights">
+<div class="highlight-item">
+<h3>🇨🇭 Qualité Suisse</h3>
+<p>Tous nos produits sont contrôlés et révisés dans notre atelier suisse selon les plus hauts standards</p>
+</div>
+<div class="highlight-item">
+<h3>✓ Garantie Qualité</h3>
+<p>Chaque produit est testé et garanti. Nous nous engageons sur la qualité de notre travail</p>
+</div>
+<div class="highlight-item">
+<h3>📞 Support Client</h3>
+<p>Une question ? Besoin de conseils ? Notre équipe est à votre disposition pour vous accompagner</p>
 </div>
 </div>
 </div>
 </section>
+
 <section class="gray-bg">
 <div class="container">
-<h2>Informations Commande</h2>
-<div class="vision-highlights">
-<div class="highlight-item"><h3>🚚 Livraison</h3><p>Livraison rapide en Suisse et international</p></div>
-<div class="highlight-item"><h3>💳 Paiement</h3><p>Paiement sécurisé par virement, facture ou Twint</p></div>
-<div class="highlight-item"><h3>📞 Support</h3><p>Conseil et support technique disponible</p></div>
+<h2>Informations Pratiques</h2>
+<div class="materials-grid">
+<div class="material-item">
+<h4>Livraison</h4>
+<p>Livraison en Suisse et à l'international. Délais et tarifs sur demande selon destination</p>
+</div>
+<div class="material-item">
+<h4>Paiement</h4>
+<p>Paiement sécurisé par virement bancaire ou sur place dans notre atelier</p>
+</div>
+<div class="material-item">
+<h4>Disponibilité</h4>
+<p>Stock limité. Contactez-nous pour vérifier la disponibilité avant de commander</p>
+</div>
+<div class="material-item">
+<h4>Garantie</h4>
+<p>Tous nos produits bénéficient d'une garantie sur le travail effectué</p>
+</div>
+<div class="material-item">
+<h4>Conseil</h4>
+<p>Besoin d'aide pour choisir ? Nous vous conseillons selon vos besoins</p>
+</div>
+<div class="material-item">
+<h4>Retrait</h4>
+<p>Possibilité de retrait directement dans notre atelier à Cernier</p>
+</div>
 </div>
 </div>
 </section>
+
+<section>
+<div class="container">
+<h2>Commande & Contact</h2>
+<p class="intro">Pour commander ou obtenir plus d'informations sur nos produits, n'hésitez pas à nous contacter par téléphone ou email. Nous répondons rapidement à toutes vos demandes.</p>
+<div class="priority-grid" style="margin-top: 50px;">
+<div class="priority-card">
+<h3>📞 Par Téléphone</h3>
+<p style="font-size: 1.3em; color: var(--primary-red); margin: 20px 0;"><a href="tel:+41328532151" style="color: var(--primary-red); text-decoration: none;">+41 (0)32 853 21 51</a></p>
+<p>Appelez-nous directement pour toute question sur nos produits ou pour passer commande.</p>
+</div>
+<div class="priority-card">
+<h3>📧 Par Email</h3>
+<p style="font-size: 1.3em; color: var(--primary-red); margin: 20px 0;"><a href="mailto:info@mum-usinage.ch" style="color: var(--primary-red); text-decoration: none;">info@mum-usinage.ch</a></p>
+<p>Envoyez-nous un email avec vos questions. Nous vous répondons dans les plus brefs délais.</p>
+</div>
+</div>
+</div>
+</section>
+
 <div id="gallery-modal" class="gallery-modal">
 <span class="gallery-close" onclick="closeGallery()">&times;</span>
 <div class="gallery-content">
@@ -92,12 +209,67 @@
 </div>
 <div class="gallery-counter"><span id="image-counter"></span></div>
 </div>
+
 <footer>
 <p>&copy; 2025 Atelier MµM-Usinage - Mécanique de Précision</p>
 <p style="margin-top: 10px;">Tous droits réservés</p>
 <p style="margin-top: 15px; color: #666;">* Délai sous 24h selon conditions</p>
 </footer>
+
 <script src="script.js"></script>
-<script>const galleries={'support-chariot-102':['public/assets/support chariot 102 1.jpeg','public/assets/support chariot 102 2.jpeg','public/assets/support chariot 102 3.jpeg','public/assets/support chariot 102 4.jpeg']};let currentGallery=[],currentImageIndex=0;function openGallery(e){currentGallery=galleries[e],currentImageIndex=0,showImage(),document.getElementById("gallery-modal").classList.add("active")}function closeGallery(){document.getElementById("gallery-modal").classList.remove("active")}function changeImage(e){currentImageIndex+=e,currentImageIndex<0?currentImageIndex=currentGallery.length-1:currentImageIndex>=currentGallery.length&&(currentImageIndex=0),showImage()}function showImage(){document.getElementById("gallery-image").src=currentGallery[currentImageIndex],document.getElementById("image-counter").textContent=currentImageIndex+1+" / "+currentGallery.length}document.addEventListener("keydown",(function(e){"Escape"===e.key&&closeGallery()})),document.addEventListener("keydown",(function(e){document.getElementById("gallery-modal").classList.contains("active")&&("ArrowLeft"===e.key?changeImage(-1):"ArrowRight"===e.key&&changeImage(1))}));</script>
+<script>
+const galleries = {
+    'g60-product': [
+        'public/assets/G60 1.jpeg',
+        'public/assets/G60 2.jpeg',
+        'public/assets/G60 3.jpeg'
+    ]
+};
+
+let currentGallery = [];
+let currentImageIndex = 0;
+
+function openGallery(galleryName) {
+    currentGallery = galleries[galleryName];
+    currentImageIndex = 0;
+    showImage();
+    document.getElementById('gallery-modal').classList.add('active');
+}
+
+function closeGallery() {
+    document.getElementById('gallery-modal').classList.remove('active');
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) {
+        currentImageIndex = currentGallery.length - 1;
+    } else if (currentImageIndex >= currentGallery.length) {
+        currentImageIndex = 0;
+    }
+    showImage();
+}
+
+function showImage() {
+    document.getElementById('gallery-image').src = currentGallery[currentImageIndex];
+    document.getElementById('image-counter').textContent = (currentImageIndex + 1) + ' / ' + currentGallery.length;
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeGallery();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (document.getElementById('gallery-modal').classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+            changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+            changeImage(1);
+        }
+    }
+});
+</script>
 </body>
 </html>
