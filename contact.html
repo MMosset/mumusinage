@@ -45,11 +45,9 @@
 </div>
 </nav>
 <section class="hero">
-<div class="container">
-<h3>Contactez-nous</h3>
-<p>Nous sommes à votre disposition pour discuter de vos projets et répondre à vos besoins</p>
-</div>
+<div class="container"><h3>Contactez-nous</h3><p>Nous sommes à votre disposition pour discuter de vos projets et répondre à vos besoins</p></div>
 </section>
+
 <section>
 <div class="container">
 <h2>Informations de Contact</h2>
@@ -63,17 +61,68 @@
 <p>Rue des Monts 21 C Sud<br>2053 Cernier<br>Suisse</p>
 </div>
 <div class="contact-item">
-<h3>EMAIL</h3>
-<p><a href="/cdn-cgi/l/email-protection#8ae3e4ece5cae7ffe7a7fff9e3e4ebedefa4e9e2"><span class="__cf_email__" data-cfemail="c5acaba3aa85a8b0a8e8b0b6acaba4a2a0eba6ad">[email&#160;protected]</span></a></p>
+<h3>HORAIRES</h3>
+<p>Lundi - Vendredi : 7:00-18:00<br>Disponibilité flexible selon vos besoins</p>
 </div>
-</div>
-<div class="contact-map">
-<h3 style="color: var(--black); margin-bottom: 20px; font-size: 1.5em;">Nos Horaires</h3>
-<p style="font-size: 1.1em; color: #555; line-height: 1.8;">Lundi - Vendredi : 7:00-18:00<br>Disponibilité flexible selon vos besoins</p>
 </div>
 </div>
 </section>
-<section class="gray-bg">
+
+<section class="gray-bg" id="formulaire">
+<div class="container">
+<h2>Formulaire de Contact</h2>
+<p class="intro">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+<div class="contact-form-wrapper">
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+<div class="form-row">
+<div class="form-group">
+<label for="name">Nom complet *</label>
+<input type="text" id="name" name="name" required placeholder="Votre nom">
+</div>
+<div class="form-group">
+<label for="company">Entreprise</label>
+<input type="text" id="company" name="company" placeholder="Nom de votre entreprise">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="email">Email *</label>
+<input type="email" id="email" name="email" required placeholder="votre@email.ch">
+</div>
+<div class="form-group">
+<label for="phone">Téléphone</label>
+<input type="tel" id="phone" name="phone" placeholder="+41 XX XXX XX XX">
+</div>
+</div>
+<div class="form-group">
+<label for="subject">Sujet *</label>
+<select id="subject" name="subject" required>
+<option value="">Sélectionnez un sujet</option>
+<option value="Demande de devis">Demande de devis</option>
+<option value="Commande shop">Commande produit (Shop)</option>
+<option value="G40-G60">Service G40-G60</option>
+<option value="Information générale">Information générale</option>
+<option value="Autre">Autre</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Message *</label>
+<textarea id="message" name="message" rows="6" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
+</div>
+<div class="form-group">
+<label class="checkbox-label">
+<input type="checkbox" name="consent" required>
+<span>J'accepte que mes données soient utilisées pour traiter ma demande *</span>
+</label>
+</div>
+<button type="submit" class="submit-btn">📨 Envoyer le message</button>
+<p class="form-note">* Champs obligatoires</p>
+</form>
+</div>
+</div>
+</section>
+
+<section>
 <div class="container">
 <h2>Pourquoi Nous Choisir ?</h2>
 <div class="vision-highlights">
@@ -96,7 +145,12 @@
 </div>
 </div>
 </section>
+
 <footer>
 <p>&copy; 2025 Atelier MµM-Usinage - Mécanique de Précision</p>
 <p style="margin-top: 10px;">Tous droits réservés</p>
-<p sty
+<p style="margin-top: 15px; color: #666;">* Délai sous 24h selon conditions</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
