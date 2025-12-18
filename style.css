@@ -136,8 +136,12 @@ header::after {
 nav {
     background: var(--black);
     border-bottom: 2px solid var(--dark-gray);
-    position: relative;
-    z-index: 1000;
+    position: fixed;
+    top: 135px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -1094,6 +1098,10 @@ html {
 
 /* Style amélioré pour le menu sticky sur mobile */
 @media (max-width: 768px) {
+    nav {
+        top: 220px;
+    }
+    
     .hamburger {
         position: relative;
         z-index: 1001;
@@ -1106,5 +1114,11 @@ html {
         right: 0;
         background: var(--black);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        top: 240px;
     }
 }
