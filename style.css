@@ -205,15 +205,23 @@ section h2 {
     font-weight: 300;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--black);
+    color: var(--white);
     position: relative;
-    padding-bottom: 25px;
+    padding: 40px 20px;
+    background: linear-gradient(to right, rgba(10, 10, 10, 0.3) 0%, rgba(26, 26, 26, 0.6) 50%, rgba(10, 10, 10, 0.9) 100%), 
+                url('public/assets/suisse.jpg');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 section h2::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
