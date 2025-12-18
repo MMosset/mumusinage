@@ -961,6 +961,7 @@ footer p {
 
     section h2 {
         font-size: 2em;
+        background-position: center center;
     }
 
     .hero h3 {
