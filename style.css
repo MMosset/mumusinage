@@ -210,7 +210,7 @@ section h2 {
     padding: 40px 20px;
     background: linear-gradient(to right, rgba(10, 10, 10, 0.5) 0%, rgba(26, 26, 26, 0.4) 50%, rgba(10, 10, 10, 0.5) 100%), 
                 url('public/assets/suisse.jpg');
-    background-size: 150%;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
