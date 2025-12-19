@@ -940,6 +940,19 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    header {
+        position: absolute;
+        top: 0;
+    }
+    
+    nav {
+        top: 0;
+    }
+    
+    body {
+        padding-top: 60px;
+    }
+    
     .header-content {
         flex-direction: column;
         padding: 20px;
@@ -1056,15 +1069,11 @@ footer p {
     .contact-form {
         padding: 25px;
     }
-
-    body {
-        padding-top: 280px;
-    }
 }
 
 @media (max-width: 480px) {
     body {
-        padding-top: 300px;
+        padding-top: 60px;
     }
 
     .logo-section h1 {
@@ -1098,10 +1107,6 @@ html {
 
 /* Style amélioré pour le menu sticky sur mobile */
 @media (max-width: 768px) {
-    nav {
-        top: 220px;
-    }
-    
     .hamburger {
         position: relative;
         z-index: 1001;
@@ -1114,11 +1119,5 @@ html {
         right: 0;
         background: var(--black);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    }
-}
-
-@media (max-width: 480px) {
-    nav {
-        top: 240px;
     }
 }
