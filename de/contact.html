@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt - Atelier MµM-Usinage</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+<div class="header-content">
+<div class="header-left">
+<a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+<img src="../public/assets/MUM_logo.png" alt="MµM-Usinage Logo" class="logo-image">
+<div class="logo-section">
+<h1>PRÄZISIONS</h1>
+<h2>MECHANIK</h2>
+</div>
+</a>
+</div>
+<div class="header-right">
+<div class="lang-switcher">
+<a href="../contact.html" class="lang-link">FR</a>
+<a href="../en/contact.html" class="lang-link">EN</a>
+<a href="contact.html" class="lang-link active">DE</a>
+</div>
+<div class="header-badges">
+<div class="badge">🇨🇭 Swiss Made</div>
+<div class="badge">⚡ Lieferfrist 24h*</div>
+</div>
+</div>
+</div>
+</header>
+<nav>
+<div class="nav-container">
+<button class="hamburger" onclick="toggleMenu()">☰</button>
+<ul id="nav-menu">
+<li><a href="index.html">Startseite</a></li>
+<li><a href="histoire.html">Geschichte</a></li>
+<li><a href="capacites.html">Kapazitäten</a></li>
+<li><a href="realisations.html">Referenzen</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="G40-G60.html">G40-G60</a></li>
+<li><a href="contact.html" class="active">Kontakt</a></li>
+<li><a href="telechargement.html">Downloads</a></li>
+</ul>
+</div>
+</nav>
+<section class="hero">
+<div class="container"><h3>Kontaktieren Sie uns</h3><p>Wir stehen Ihnen zur Verfügung, um Ihre Projekte zu besprechen und Ihre Anforderungen zu erfüllen</p></div>
+</section>
+
+<section>
+<div class="container">
+<h2>Kontaktangaben</h2>
+<div class="contact-grid">
+<div class="contact-item">
+<h3>TELEFON</h3>
+<p><a href="tel:+41328532151">+41 (0)32 853 21 51</a></p>
+</div>
+<div class="contact-item">
+<h3>ADRESSE</h3>
+<p>Rue des Monts 21 C Sud<br>2053 Cernier<br>Schweiz</p>
+</div>
+<div class="contact-item">
+<h3>ÖFFNUNGSZEITEN</h3>
+<p>Montag - Freitag<br>7:00-12:00 | 13:00-18:00<br>Flexible Verfügbarkeit nach Ihren Bedürfnissen</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="gray-bg" id="formulaire">
+<div class="container">
+<h2>Kontaktformular</h2>
+<p class="intro">Füllen Sie das untenstehende Formular aus, wir melden uns schnellstmöglich bei Ihnen.</p>
+<div class="contact-form-wrapper">
+<form action="https://formspree.io/f/mvzpognp" method="POST" class="contact-form">
+<input type="hidden" name="_subject" value="Nouveau message depuis MµM-Usinage">
+<div class="form-row">
+<div class="form-group">
+<label for="name">Vollständiger Name *</label>
+<input type="text" id="name" name="name" required placeholder="Ihr Name">
+</div>
+<div class="form-group">
+<label for="company">Unternehmen</label>
+<input type="text" id="company" name="company" placeholder="Name Ihres Unternehmens">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="email">E-Mail *</label>
+<input type="email" id="email" name="email" required placeholder="ihre@email.ch">
+</div>
+<div class="form-group">
+<label for="phone">Telefon</label>
+<input type="tel" id="phone" name="phone" placeholder="+41 XX XXX XX XX">
+</div>
+</div>
+<div class="form-group">
+<label for="subject">Betreff *</label>
+<select id="subject" name="subject" required>
+<option value="">Betreff auswählen</option>
+<option value="Demande de devis">Angebotsanfrage</option>
+<option value="Commande shop">Produktbestellung (Shop)</option>
+<option value="G40-G60">Service G40-G60</option>
+<option value="Information générale">Allgemeine Information</option>
+<option value="Autre">Anderes</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Nachricht *</label>
+<textarea id="message" name="message" rows="6" required placeholder="Beschreiben Sie Ihr Projekt oder Ihre Anfrage..."></textarea>
+</div>
+<div class="form-group">
+<label class="checkbox-label">
+<input type="checkbox" name="consent" required>
+<span>Ich bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden *</span>
+</label>
+</div>
+<button type="submit" class="submit-btn">📨 Nachricht senden</button>
+<p class="form-note">* Pflichtfelder</p>
+</form>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Warum uns wählen?</h2>
+<div class="vision-highlights">
+<div class="highlight-item">
+<h3>🇨🇭 Swiss Made</h3>
+<p>Garantierte Schweizer Qualität, lokale Fertigung</p>
+</div>
+<div class="highlight-item">
+<h3>⚡ Reaktionsschnelligkeit</h3>
+<p>Kurze Lieferfristen und verbindliche Termine</p>
+</div>
+<div class="highlight-item">
+<h3>🎯 Präzision</h3>
+<p>Technisches Fachwissen und sorgfältige Qualitätskontrolle</p>
+</div>
+<div class="highlight-item">
+<h3>🤝 Nähe</h3>
+<p>Direkter Kontakt ohne Zwischenhändler</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2025 Atelier MµM-Usinage - Präzisionsmechanik</p>
+<p style="margin-top: 10px;">Alle Rechte vorbehalten</p>
+<p style="margin-top: 15px; color: #666;">* Lieferfrist 24h nach Bedingungen</p>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>
