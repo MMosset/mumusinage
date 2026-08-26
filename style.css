@@ -123,6 +123,35 @@ header::after {
     gap: 15px;
 }
 
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-link {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+.lang-link:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+}
+
+.lang-link.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: #fff;
+}
+
 .badge {
     background: rgba(236, 7, 7, 0.15);
     border: 1px solid var(--primary-red);
@@ -940,58 +969,88 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    /* Le header défile normalement, la nav reste collée en haut :
+       plus aucun chevauchement entre les deux. */
     header {
-        position: absolute;
-        top: 0;
+        /* relative (et non static) : les calques ::before/::after du header
+           doivent rester ancrés sur le header, pas sur la page entière */
+        position: relative;
+        border-bottom-width: 2px;
     }
-    
+
     nav {
+        position: sticky;
         top: 0;
     }
-    
+
     body {
-        padding-top: 60px;
+        padding-top: 0;
     }
-    
+
+    /* Header compact sur une seule ligne */
     .header-content {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        gap: 12px;
     }
 
     .header-left {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 10px;
+        min-width: 0;
     }
 
     .logo-image {
-        width: 60px;
-        height: 60px;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
     }
 
     .logo-section h1 {
-        font-size: 1.5em;
-        letter-spacing: 4px;
+        font-size: 1.05em;
+        letter-spacing: 2px;
     }
 
     .logo-section h2 {
-        font-size: 0.9em;
-        letter-spacing: 2px;
+        font-size: 0.65em;
+        letter-spacing: 1px;
+        margin-top: 2px;
     }
 
     .header-right {
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-end;
+        gap: 6px;
+        flex-shrink: 0;
+    }
+
+    .lang-switcher {
+        gap: 5px;
+    }
+
+    .lang-link {
+        padding: 3px 8px;
+        font-size: 0.72em;
     }
 
     .header-badges {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .badge {
+        padding: 3px 7px;
+        font-size: 0.62em;
     }
 
     .hamburger {
         display: block;
+        font-size: 1.5em;
+        padding: 8px;
     }
 
     nav ul {
@@ -1073,17 +1132,37 @@ footer p {
 
 @media (max-width: 480px) {
     body {
-        padding-top: 60px;
+        padding-top: 0;
+    }
+
+    .header-content {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .logo-image {
+        width: 38px;
+        height: 38px;
     }
 
     .logo-section h1 {
-        font-size: 1.2em;
-        letter-spacing: 2px;
+        font-size: 0.85em;
+        letter-spacing: 1px;
     }
 
     .logo-section h2 {
-        font-size: 0.75em;
-        letter-spacing: 1px;
+        font-size: 0.55em;
+        letter-spacing: 0.5px;
+    }
+
+    .lang-link {
+        padding: 2px 6px;
+        font-size: 0.65em;
+    }
+
+    .badge {
+        padding: 2px 5px;
+        font-size: 0.55em;
     }
 
     section h2 {
